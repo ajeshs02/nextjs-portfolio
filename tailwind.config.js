@@ -6,11 +6,33 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      primary: ['Inter', 'sans-serif'],
+      secondary: ['Open Sans', 'sans-serif'],
+      tertiary: ['Montserrat', 'sans-serif'],
+      quaternary: ['PT Sans', 'sans-serif'],
+    },
+    container: {
+      padding: {
+        DEFAULT: '15px',
+      },
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '960px',
+      xl: '1200px',
+    },
     extend: {
+      colors: {
+        primary: '#11071f',
+        secondary: '#2c1250',
+        accent: '#7026b8',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        site: "url('./assets/site-bg.jpg')",
+        about: "url('./assets/about.png')",
+        services: "url('./assets/services.png')",
       },
     },
   },

@@ -2,26 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.btn {
+  background: linear-gradient(
+    96deg,
+    rgba(45, 0, 90, 1) 0%,
+    rgba(69, 30, 89, 1) 99%
+  );
+  font-weight: 700;
+  box-shadow: 0px 4.42184px 115.23px rgba(90, 33, 159, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.btn:hover {
+  box-shadow: 0px 4.42184px 100.23px rgba(90, 33, 159, 0.8);
+}
+
+.card-shadow {
+  transition: all ease-in-out;
+  box-shadow: 0px 4.42184px 40.23px rgba(90, 33, 159, 0.2);
+}
+.card-shadow:hover {
+  box-shadow: 0px 4.42184px 50.23px rgba(90, 33, 159, 0.2);
+}
+
+.gradient {
+  background: linear-gradient(
+    92.23deg,
+    #406aff 21.43%,
+    #3bace2 50.63%,
+    #b936ee 100%,
+    #ff56f6 117.04%
+  );
+}
+
+.active {
+  color: #fff;
+  padding: 1rem;
+  border-radius: 100%;
+  background: linear-gradient(
+    96deg,
+    rgba(45, 0, 90, 1) 0%,
+    rgba(69, 30, 89, 1) 99%
+  );
+}
+
+.title-shadow {
+  box-shadow: 0px 4.42184px 107.23px rgba(90, 33, 159, 0.9);
+}
+
+/* input field browser styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: #11071f !important;
+  color: white !important;
+}
+
+/* scrollbar */
+
+#scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #5b4040;
+}
+
+#scrollbar::-webkit-scrollbar {
+  width: 12px;
+  background-color: #aa1515;
+}
+
+#scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #822ada;
+}
+
+@layer base {
+  body {
+    @apply font-secondary text-lg leading-8 text-white;
+  }
+  .h2 {
+    @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
+  }
+  .h3 {
+    @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
+  }
+  .btn {
+    @apply rounded-full font-primary text-white font-medium;
+  }
+  .btn-sm {
+    @apply h-[48px] px-6 text-sm;
+  }
+  .btn-lg {
+    @apply h-[56px] px-10 text-base;
+  }
+  .btn-link {
+    @apply text-base;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#b936ee] to-[#451e59] font-bold font-primary;
+  }
+  .section {
+    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+  }
+  .about-section {
+    @apply py-8 lg:py-24  flex items-center;
+  }
+  .skill-section {
+    @apply py-8 lg:py-24  flex items-center;
+  }
+  .services-section {
+    @apply py-8 lg:py-24  flex items-center;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+#blob {
+  position: absolute;
+  width: 500px;
+  aspect-ratio: square;
+  background: rgba(27, 151, 193, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  box-shadow: 0 0 10px #add8e6, 0 0 20px #add8e6, 0 0 30px #add8e6,
+    0 0 40px #add8e6;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
