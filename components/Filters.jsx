@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { MotionBtn } from './MotionElm'
 import { fadeIn } from '@/variants'
 
-const links = ['NextJs', 'React.Js', 'MERN']
+const links = ['NextJs', 'ReactJs', 'Fullstack']
 
 const Filters = () => {
   const [active, setActive] = useState('NextJs')
@@ -26,7 +26,7 @@ const Filters = () => {
   }
 
   return (
-    <ul className=" text-white-800 body-text no-scrollbar flex w-full justify-center gap-x-4 max-w-full  overflow-auto py-6 sm:max-w-2xl">
+    <ul className=" text-white-800 body-text no-scrollbar flex w-full justify-start max-sm:justify-center gap-x-4 max-w-full  overflow-auto py-6 sm:max-w-2xl">
       {links.map((link) => (
         <MotionBtn
           variants={fadeIn('left', 0.1)}

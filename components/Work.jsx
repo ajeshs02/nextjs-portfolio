@@ -55,7 +55,7 @@ const Work = async ({ searchParams }) => {
           ) : (
             <div className="h-72 flex justify-center items-center">
               <p className="body-regular text-white-400 text-xl text-white">
-                Oops,No Projects found !
+                Oops,No {searchParams?.category} Projects found !
               </p>
             </div>
           )}
