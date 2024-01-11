@@ -19,7 +19,7 @@ const About = () => {
             <h3
               className={`text-white transition-all text-2xl font-semibold mb-4`}
             >
-              I'm a self taught web developer. I build websites with React,
+              A self taught web developer who build awesome websites with React,
               Next.Js and MERN stack.
             </h3>
             <p className={`text-gray-300 transition-all mb-6 `}>
