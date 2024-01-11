@@ -28,7 +28,7 @@ const Hero = () => {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true, amount: 0.7 }}
-              className={`mb-8 max-w-lg mx-auto lg:mx-0 font-medium tracking-wider text-gray-500 `}
+              className={`mb-8 max-w-lg mx-auto lg:mx-0 font-medium tracking-widest text-gray-500 `}
             >
               I build solid and scalable websites with great user experience.
               Specialised in MERN stack / Next.Js
@@ -39,9 +39,9 @@ const Hero = () => {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true, amount: 0.7 }}
-              className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0 text-purple-600"
+              className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0 text-purple-600/70"
             >
-              <p className=" relative  transition-all flex items-center justify-center gap-x-2 ">
+              <p className=" relative  transition-all flex items-center justify-center gap-x-2 tracking-widest ">
                 Explore More <div className="down-arrow" />
               </p>
             </MotionDiv>

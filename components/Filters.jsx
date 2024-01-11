@@ -35,8 +35,8 @@ const Filters = () => {
           viewport={{ once: true, amount: 0.3 }}
           key={link}
           onClick={() => handleFilter(link)}
-          className={`bg-purple-950/50 ${
-            active === link && '!bg-purple-600'
+          className={`bg-purple-950/20 ${
+            active === link && 'filter'
           } text-white whitespace-nowrap rounded-xl px-6 py-2 capitalize `}
         >
           {link}

@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className=" flex justify-between items-center  border-purple-700/20 gap-y-10 border-t  px-3 sm:px-20 py-12 text-base tracking-widest text-gray-400">
+    <footer className=" flex justify-between items-center  border-purple-700/20 gap-y-10 border-t  px-3 sm:px-20 py-12 text-base tracking-widest text-gray-500">
       <div className="flex flex-col">
         <p>Ajesh S</p>
         <a href="mailto:ajeshs.dev@gmail.com">ajeshs.dev@gmail.com</a>

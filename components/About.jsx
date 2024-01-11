@@ -38,7 +38,7 @@ const About = () => {
             </p>
             {/* stats */}
             <div className="flex gap-x-6 lg:gap-x-12 mb-12">
-              <div>
+              <div className="bg-white p-4 rounded-tl-3xl rounded-br-3xl rounded projectCount">
                 {/* counter */}
                 <ProjectCounter />
                 <div

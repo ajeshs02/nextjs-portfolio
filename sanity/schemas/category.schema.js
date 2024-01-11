@@ -21,12 +21,7 @@ const schema = {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'gitLink',
-      title: 'Source code',
-      type: 'url',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       name: 'image',
       title: 'Image',
