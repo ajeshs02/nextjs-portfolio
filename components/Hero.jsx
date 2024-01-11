@@ -41,9 +41,12 @@ const Hero = () => {
               viewport={{ once: true, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0 text-purple-600/70"
             >
-              <div className=" relative  transition-all flex items-center justify-center gap-x-2 tracking-widest ">
+              <a
+                href="#about"
+                className=" relative  transition-all flex items-center justify-center gap-x-2 tracking-widest "
+              >
                 Explore More <div className="down-arrow" />
-              </div>
+              </a>
             </MotionDiv>
           </div>
           {/* image */}
@@ -56,6 +59,7 @@ const Hero = () => {
             <img src={Image} alt="profile" />
           </MotionDiv> */}
         </div>
+        <div id="about" />
       </div>
     </section>
   )

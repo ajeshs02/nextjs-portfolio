@@ -4,7 +4,7 @@ import ProjectCounter from './ProjectCounter'
 
 const About = () => {
   return (
-    <section className="h-screen" id="about">
+    <section className="h-screen">
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-10 lg:gap-x-6 lg:flex-row lg:items-center lg:gap-y-0 h-screen px-3">
           {/*text */}
