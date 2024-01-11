@@ -17,14 +17,14 @@ const About = () => {
           >
             <h2 className="h2 text-accent font-bold">About Me</h2>
             <h3
-              className={`text-white transition-all text-3xl font-semibold mb-4`}
+              className={`text-white transition-all text-2xl font-semibold mb-4`}
             >
               I'm a self taught web developer. I build websites with React,
               Next.Js and MERN stack.
             </h3>
             <p className={`text-gray-300 transition-all mb-6 `}>
-              My coding journey began after my BCA graduation in 2023. I've
-              since immersed myself in web development, accruing substantial
+              My coding journey began after my BCA graduation. I've since
+              immersed myself in web development, accruing substantial
               experience through various projects and freelancing endeavors.
               <br />
               <br />
@@ -50,13 +50,16 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="flex gap-x-8 items-center">
-              <div>
-                <button className="btn btn-lg hover:scale-[1.01]  active:scale-[0.99] transition-all  ">
+            {/* <div className="flex gap-x-8 items-center ">
+              <div className="btn btn-lg flex items-center">
+                <a
+                  href="#work"
+                  className="hover:scale-[1.01]  active:scale-[0.99] transition-all   "
+                >
                   view projects
-                </button>
+                </a>
               </div>
-            </div>
+            </div> */}
           </MotionDiv>
         </div>
       </div>

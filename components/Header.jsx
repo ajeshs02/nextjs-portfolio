@@ -11,10 +11,17 @@ const Header = () => {
           </div>
           {/* socials */}
           <div className={`flex text-[20px] text-white  gap-x-6`}>
-            <Link href="#" target="_blank" className="">
+            <Link
+              href="https://github.com/JS-Wizardd"
+              target="_blank"
+              className=""
+            >
               <FaGithub />
             </Link>
-            <Link href="#" target="_blank">
+            <Link
+              href="https://www.linkedin.com/in/ajesh-s-a507792a7/"
+              target="_blank"
+            >
               <FaLinkedin />
             </Link>
           </div>

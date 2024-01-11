@@ -1,5 +1,4 @@
 import { fadeIn } from '../variants'
-import { useInView } from 'react-intersection-observer'
 import { MotionDiv } from './MotionElm'
 import Filters from './Filters'
 import { getProjects } from '@/sanity/actions'
@@ -11,15 +10,10 @@ const Work = async ({ searchParams }) => {
     page: '1',
   })
 
-  // console.log('projects: ', projects)
-
   return (
-    <section
-      className="section h-screen min-h-screen  mb-24 py-3 max-sm:mt-28 "
-      id="work"
-    >
+    <section className="section h-fit min-h-fit max-h-fit py-3 mb-24" id="work">
       <div className="container mx-auto w-full">
-        <div className="flex flex-col w-full gap-x-10">
+        <div className="flex flex-col  w-full gap-x-10">
           <MotionDiv
             variants={fadeIn('right', 0.3)}
             initial="hidden"
@@ -28,7 +22,7 @@ const Work = async ({ searchParams }) => {
             className="flex-1 flex flex-col gap-y-4  lg:mb-0"
           >
             {/* text */}
-            <h2 className="h2 leading-tight  lg:mt-44 font-bold text-accent">
+            <h2 className="h2 leading-tight  lg:mt-24 font-bold text-accent">
               My Works
             </h2>
           </MotionDiv>

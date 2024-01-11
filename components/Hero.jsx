@@ -33,17 +33,17 @@ const Hero = () => {
               I build solid and scalable websites with great user experience.
               Specialised in MERN stack / Next.Js
             </MotionP>
-            {/* contact me */}
+            {/* explore */}
             <MotionDiv
               variants={fadeIn('up', 0.6)}
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true, amount: 0.7 }}
-              className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
+              className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0 text-purple-600"
             >
-              <button className="btn btn-lg  active:scale-[0.99] transition-all ">
-                Say Hello
-              </button>
+              <p className=" relative  transition-all flex items-center justify-center gap-x-2 ">
+                Explore More <div className="down-arrow" />
+              </p>
             </MotionDiv>
           </div>
           {/* image */}

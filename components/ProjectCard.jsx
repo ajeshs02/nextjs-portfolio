@@ -29,16 +29,9 @@ const ProjectCard = ({ name, src, desc, link }) => {
           <Link
             href={link}
             target="_blank"
-            className="text-purple-500 tracking-widest text-base  w-fit pr-6"
+            className="text-purple-500 tracking-widest text-base  w-fit pr-6 underline"
           >
-            visit
-          </Link>
-          <Link
-            href={''}
-            target="_blank"
-            className="text-purple-500 w-fit tracking-widest text-base"
-          >
-            source Code
+            visit Website
           </Link>
         </div>
       </div>

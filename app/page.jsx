@@ -9,7 +9,7 @@ import Work from '@/components/Work'
 const page = ({ searchParams }) => {
   return (
     <div
-      className={`bg-primary text-black max-md:px-2 pb-32 overflow-x-hidden transition-all duration-500 snap-y snap-mandatory`}
+      className={`bg-primary text-black max-md:px-2  overflow-x-hidden transition-all duration-500 snap-y snap-mandatory`}
     >
       <Header />
       <Hero />

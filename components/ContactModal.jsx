@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 
-const Contact = () => {
+const ContactModal = () => {
   const form = useRef()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -29,9 +29,6 @@ const Contact = () => {
       setTimeout(() => {
         setIsLoading(false)
         setButtonText('Send Email')
-        setName('')
-        setEmail('')
-        setMessage('')
       }, 3000)
     } catch (error) {
       console.log(error)
@@ -81,10 +78,11 @@ const Contact = () => {
               value={name}
               required
               name="name"
+              autoComplete="off"
               onChange={(e) => setName(e.target.value)}
               placeholder="Your name"
-              className={`bg-transparent border-b border-purple-500 py-3 outline-none w-full
-              placeholder:text-white focus:border-accent transition-all`}
+              className={`!bg-transparent !border-b !border-purple-500 py-3 !outline-none w-full
+              !placeholder:text-white !focus:border-accent transition-all`}
             />
 
             <input
@@ -102,6 +100,7 @@ const Contact = () => {
             <textarea
               placeholder="Your message"
               value={message}
+              autoComplete="off"
               required
               name="message"
               onChange={(e) => setMessage(e.target.value)}
@@ -120,4 +119,4 @@ const Contact = () => {
     </div>
   )
 }
-export default Contact
+export default ContactModal

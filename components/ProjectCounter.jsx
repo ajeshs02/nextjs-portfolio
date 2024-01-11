@@ -11,7 +11,7 @@ const ProjectCounter = () => {
         <CountUp
           delay={0.5}
           start={0}
-          end={13}
+          end={22}
           duration={4}
           enableScrollSpy={false}
           scrollSpyOnce={true}

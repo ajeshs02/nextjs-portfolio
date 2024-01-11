@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .btn {
   background: linear-gradient(
     96deg,
@@ -121,18 +125,6 @@ select:-webkit-autofill:focus {
   }
 }
 
-#blob {
-  position: absolute;
-  width: 500px;
-  aspect-ratio: square;
-  background: rgba(27, 151, 193, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  box-shadow: 0 0 10px #add8e6, 0 0 20px #add8e6, 0 0 30px #add8e6,
-    0 0 40px #add8e6;
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -142,4 +134,29 @@ select:-webkit-autofill:focus {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* animated down arrow */
+.down-arrow {
+  position: relative;
+  top: -5px;
+  width: 12px;
+  height: 12px;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  border-radius: 4px;
+  transform: rotateZ(45deg);
+  animation: jumpInfinite 1.5s infinite;
+}
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 15px;
+  }
+  100% {
+    margin-top: 0;
+  }
 }

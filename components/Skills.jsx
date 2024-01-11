@@ -22,7 +22,7 @@ const Skills = () => {
             <h2 className="h2  text-accent text-4xl ml-2 -mb-4 font-bold ">
               SKILLS
             </h2>
-            <div className="flex-1  flex flex-row first-line:justify-around flex-wrap gap-5 items-center justify-center lg:max-w-[75%] ">
+            <div className="flex-1  flex flex-row  flex-wrap gap-x-5 gap-y-3 items-center justify-center lg:max-w-[60%] lg:gap-y-5 ">
               {Skill_set.map((image, index) => (
                 <SkillDataProvider
                   key={index}
