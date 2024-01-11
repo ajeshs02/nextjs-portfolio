@@ -26,7 +26,7 @@ const Filters = () => {
   }
 
   return (
-    <ul className=" text-white-800 body-text no-scrollbar flex w-full max-w-full gap-2 overflow-auto py-6 sm:max-w-2xl">
+    <ul className=" text-white-800 body-text no-scrollbar flex w-full max-w-full gap-1 overflow-auto py-6 sm:max-w-2xl">
       {links.map((link) => (
         <MotionBtn
           variants={fadeIn('left', 0.1)}
@@ -37,7 +37,7 @@ const Filters = () => {
           onClick={() => handleFilter(link)}
           className={`bg-purple-950/20 ${
             active === link && 'filter'
-          } text-white whitespace-nowrap rounded-xl px-6 py-2 capitalize `}
+          } text-white whitespace-nowrap rounded-xl px-4 py-2 capitalize `}
         >
           {link}
         </MotionBtn>
