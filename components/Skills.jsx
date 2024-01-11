@@ -13,7 +13,7 @@ const Skills = () => {
         <div className="w-full flex  gap-y-10 justify-center lg:items-center lg:gap-y-0 h-screen px-3">
           {/* icons */}
           <MotionDiv
-            variants={fadeIn('right', 0.5)}
+            variants={fadeIn('right', 0.2)}
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true, amount: 0.3 }}

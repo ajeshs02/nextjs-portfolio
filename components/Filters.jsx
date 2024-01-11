@@ -29,7 +29,7 @@ const Filters = () => {
     <ul className=" text-white-800 body-text no-scrollbar flex w-full max-w-full gap-2 overflow-auto py-6 sm:max-w-2xl">
       {links.map((link) => (
         <MotionBtn
-          variants={fadeIn('left', 0.3)}
+          variants={fadeIn('left', 0.1)}
           initial="hidden"
           whileInView={'show'}
           viewport={{ once: true, amount: 0.3 }}

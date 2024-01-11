@@ -11,11 +11,14 @@ const Work = async ({ searchParams }) => {
   })
 
   return (
-    <section className="section h-fit min-h-fit max-h-fit py-3 mb-24" id="work">
+    <section
+      className="min-h-fit h-[50vh] sm:h-[70vh] max-h-fit py-3  "
+      id="work"
+    >
       <div className="container mx-auto w-full">
         <div className="flex flex-col  w-full gap-x-10">
           <MotionDiv
-            variants={fadeIn('right', 0.3)}
+            variants={fadeIn('right', 0.1)}
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true, amount: 0.3 }}
@@ -33,7 +36,7 @@ const Work = async ({ searchParams }) => {
           {/* project grid */}
           {projects?.length > 0 ? (
             <MotionDiv
-              variants={fadeIn('right', 0.3)}
+              variants={fadeIn('right', 0.05)}
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true, amount: 0.3 }}
@@ -50,9 +53,11 @@ const Work = async ({ searchParams }) => {
               ))}
             </MotionDiv>
           ) : (
-            <p className="body-regular text-white-400 text-white">
-              Oops,No Projects found !
-            </p>
+            <div className="h-72 flex justify-center items-center">
+              <p className="body-regular text-white-400 text-xl text-white">
+                Oops,No Projects found !
+              </p>
+            </div>
           )}
         </div>
       </div>

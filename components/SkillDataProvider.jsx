@@ -13,7 +13,7 @@ const SkillDataProvider = ({ name, src, width, height, index, style }) => {
     visible: { opacity: 1 },
   }
 
-  const animationDelay = 0.3
+  const animationDelay = 0.1
 
   return (
     <MotionDiv

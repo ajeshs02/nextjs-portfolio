@@ -44,12 +44,12 @@ const Contact = () => {
   }
 
   return (
-    <div className="py-16 section" id="contact">
+    <div className=" section" id="contact">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           {/* text */}
           <motion.div
-            variants={fadeIn('right', 0.3)}
+            variants={fadeIn('right', 0.1)}
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true, amount: 0.3 }}
@@ -70,7 +70,7 @@ const Contact = () => {
           <motion.form
             ref={form}
             onSubmit={sendEmail}
-            variants={fadeIn('left', 0.3)}
+            variants={fadeIn('left', 0.1)}
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true, amount: 0.3 }}

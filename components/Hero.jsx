@@ -4,7 +4,7 @@ import { MotionDiv, MotionH1, MotionP } from './MotionElm'
 
 const Hero = () => {
   return (
-    <section className="section flex items-center pb-32 snap-start" id="home">
+    <section className="h-screen flex items-center snap-start" id="home">
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
           {/* ṭext */}
@@ -41,9 +41,9 @@ const Hero = () => {
               viewport={{ once: true, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0 text-purple-600/70"
             >
-              <p className=" relative  transition-all flex items-center justify-center gap-x-2 tracking-widest ">
+              <div className=" relative  transition-all flex items-center justify-center gap-x-2 tracking-widest ">
                 Explore More <div className="down-arrow" />
-              </p>
+              </div>
             </MotionDiv>
           </div>
           {/* image */}

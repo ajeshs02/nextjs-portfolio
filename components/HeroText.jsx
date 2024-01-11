@@ -11,7 +11,7 @@ const HeroText = () => {
       initial="hidden"
       whileInView={'show'}
       viewport={{ once: true, amount: 0.7 }}
-      className="mb-6 text-3xl lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
+      className="mb-6 text-2xl lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
     >
       <span className={`text-white transition-all  mr-4`}>I am a</span>
       <TypeAnimation
