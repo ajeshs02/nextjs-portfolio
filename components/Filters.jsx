@@ -26,7 +26,7 @@ const Filters = () => {
   }
 
   return (
-    <ul className=" text-white-800 body-text no-scrollbar flex w-full max-w-full gap-1 overflow-auto py-6 sm:max-w-2xl">
+    <ul className=" text-white-800 body-text no-scrollbar flex w-full justify-center gap-x-4 max-w-full  overflow-auto py-6 sm:max-w-2xl">
       {links.map((link) => (
         <MotionBtn
           variants={fadeIn('left', 0.1)}
