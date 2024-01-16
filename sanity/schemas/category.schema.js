@@ -37,7 +37,7 @@ const schema = {
       type: 'string',
       validation: (Rule) => Rule.required(),
       options: {
-        list: ['ReactJs', 'NextJs', 'Fullstack'],
+        list: ['ReactJs', 'NextJs', 'MERN'],
       },
     },
     {

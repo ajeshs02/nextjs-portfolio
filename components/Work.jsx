@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard'
 
 const Work = async ({ searchParams }) => {
   const projects = await getProjects({
-    category: searchParams?.category || '',
+    category: searchParams?.category || 'NextJs',
     page: '1',
   })
 

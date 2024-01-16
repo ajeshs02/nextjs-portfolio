@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { MotionBtn } from './MotionElm'
 import { fadeIn } from '@/variants'
 
-const links = ['NextJs', 'ReactJs', 'Fullstack']
+const links = ['NextJs', 'ReactJs', 'MERN']
 
 const Filters = () => {
   const [active, setActive] = useState('NextJs')
