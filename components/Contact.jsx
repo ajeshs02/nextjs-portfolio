@@ -4,6 +4,7 @@ import { fadeIn } from '../variants'
 import { useState } from 'react'
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import { FaCloudDownloadAlt } from 'react-icons/fa'
 
 const Contact = () => {
   const form = useRef()
@@ -44,7 +45,7 @@ const Contact = () => {
   }
 
   return (
-    <div className=" section" id="contact">
+    <div className=" section max-md:mt-44" id="contact">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           {/* text */}
@@ -114,6 +115,7 @@ const Contact = () => {
             >
               {buttonText}
             </button>
+            {/* resume download */}
           </motion.form>
         </div>
       </div>

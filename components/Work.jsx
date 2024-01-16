@@ -12,7 +12,7 @@ const Work = async ({ searchParams }) => {
 
   return (
     <section
-      className="min-h-fit h-[50vh] sm:h-[70vh] max-h-fit py-3  "
+      className="!min-h-[50vh]  h-fit sm:h-[70vh] !max-h-fit py-3 max-md:mt-44"
       id="work"
     >
       <div className="container mx-auto w-full">
@@ -40,7 +40,7 @@ const Work = async ({ searchParams }) => {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true, amount: 0.3 }}
-              className="mt-12 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+              className="mt-12 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 gap-y-7"
             >
               {projects.map((project, index) => (
                 <ProjectCard

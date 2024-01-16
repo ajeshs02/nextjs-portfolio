@@ -31,7 +31,7 @@ const SkillDataProvider = ({ name, src, width, height, index, style }) => {
         width={width}
         height={height}
         alt="name"
-        className={`mt-${style} aspect-square`}
+        className={`mt-${style} aspect-square object-contain`}
       />
 
       <p className={`text-white transition-all`}>{name}</p>

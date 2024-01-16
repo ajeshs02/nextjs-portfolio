@@ -1,5 +1,11 @@
 import Link from 'next/link'
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaTwitter,
+  FaCloudDownloadAlt,
+} from 'react-icons/fa'
 
 const Header = () => {
   return (
@@ -10,7 +16,11 @@ const Header = () => {
             Ajesh S
           </div>
           {/* socials */}
-          <div className={`flex text-[20px] text-white  gap-x-6`}>
+          <div className={`flex items-center text-[20px] text-white  gap-x-8`}>
+            <button className=" flex gap-x-1 items-center ">
+              <p className="text-purple-100/90 text-base"> resume</p>{' '}
+              <FaCloudDownloadAlt className="scale-105" />
+            </button>
             <Link
               href="https://github.com/JS-Wizardd"
               target="_blank"

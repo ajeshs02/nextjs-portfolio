@@ -27,22 +27,30 @@ export const Skill_set = [
   {
     skill_name: 'Material UI',
     Image: '/mui.webp',
-    width: 65,
-    height: 65,
+    width: 57,
+    height: 57,
+    style: 5,
   },
   {
     skill_name: 'React',
     Image: '/react.webp',
-    width: 65,
-    height: 65,
+    width: 55,
+    height: 50,
+    style: 4,
+  },
+  {
+    skill_name: 'React Query',
+    Image: '/reactquery.webp',
+    width: 60,
+    height: 60,
     style: 4,
   },
   {
     skill_name: 'Redux Toolkit',
     Image: '/redux.webp',
-    width: 55,
-    height: 55,
-    style: '',
+    width: 50,
+    height: 50,
+    style: 5,
   },
   {
     skill_name: 'Type Script',
@@ -71,8 +79,8 @@ export const Skill_set = [
   {
     skill_name: 'Node js',
     Image: '/node-js.webp',
-    width: 50,
-    height: 50,
+    width: 57,
+    height: 57,
   },
   {
     skill_name: 'Express js',
@@ -83,8 +91,8 @@ export const Skill_set = [
   {
     skill_name: 'Mongo db',
     Image: '/mongodb.webp',
-    width: 30,
-    height: 30,
+    width: 56,
+    height: 56,
   },
   {
     skill_name: 'Docker',

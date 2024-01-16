@@ -1,5 +1,11 @@
 import Link from 'next/link'
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaTwitter,
+  FaCloudDownloadAlt,
+} from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -14,12 +20,15 @@ const Footer = () => {
         </a>
         <a
           href="tel:+919895765329"
-          className="hover:tracking-widest transition-all"
+          className="p-0 max-h-fit max-w-fit w-fit h-fit"
         >
           +919895765329
         </a>
       </div>
       <div className="flex flex-col gap-y-3">
+        <button className=" flex items-center gap-x-1 ">
+          <FaCloudDownloadAlt className="scale-105" /> Resume
+        </button>
         <Link
           href="https://github.com/JS-Wizardd"
           target="_blank"
