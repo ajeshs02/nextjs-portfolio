@@ -22,7 +22,7 @@ const Skills = () => {
             <h2 className="h2  text-accent text-4xl ml-2 mb-7 font-bold ">
               SKILLS
             </h2>
-            <div className="flex-1  flex flex-row  flex-wrap gap-x-5 gap-y-3 items-center justify-center  lg:max-w-[50%] lg:gap-y-5 max-lg:max-h-[70%]  ">
+            <div className="flex-1  flex flex-row  flex-wrap gap-x-5 gap-y-3 !items-center justify-center  lg:max-w-[50%] lg:gap-y-5 max-lg:max-h-[70%]  ">
               {Skill_set.map((image, index) => (
                 <SkillDataProvider
                   key={index}
@@ -31,7 +31,7 @@ const Skills = () => {
                   height={image.height}
                   index={index}
                   name={image.skill_name}
-                  style={image.style}
+                  style={image?.style}
                 />
               ))}
             </div>

@@ -24,17 +24,23 @@ const SkillDataProvider = ({ name, src, width, height, index, style }) => {
       animate={inView ? 'visible' : 'hidden'}
       custom={index}
       transition={{ delay: index * animationDelay }}
-      className="scale-75 flex flex-col  justify-between items-center gap-y-2 mx-auto object-contain object-center "
+      className="flex flex-col  justify-center  items-center gap-y-2 mx-auto object-contain object-center w-20 h-24  !aspect-square"
     >
       <Image
         src={src}
         width={width}
         height={height}
         alt="name"
-        className={`mt-${style} aspect-square object-contain`}
+        className={`aspect-square object-contain  `}
       />
 
-      <p className={`text-white transition-all`}>{name}</p>
+      <p
+        className={`${
+          style > 0 && `!top-${style}`
+        } text-white text-sm relative transition-all break-words text-center `}
+      >
+        {name}
+      </p>
     </MotionDiv>
   )
 }

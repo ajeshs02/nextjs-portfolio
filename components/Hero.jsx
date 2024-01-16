@@ -1,6 +1,8 @@
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { fadeIn } from '../variants'
 import HeroText from './HeroText'
 import { MotionDiv, MotionH1, MotionP } from './MotionElm'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -33,6 +35,28 @@ const Hero = () => {
               I build solid and scalable websites with great user experience.
               Specialised in MERN stack / Next.Js
             </MotionP>
+            {/* explore */}
+            <MotionDiv
+              variants={fadeIn('up', 0.6)}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{ once: true, amount: 0.7 }}
+              className="flex max-w-max gap-x-8 items-center mb-12 mx-auto text-white "
+            >
+              <Link
+                href="https://github.com/JS-Wizardd"
+                target="_blank"
+                className=""
+              >
+                <FaGithub className="scale-125 hover:scale-[1.35] transition-all" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/ajesh-s-a507792a7/"
+                target="_blank"
+              >
+                <FaLinkedin className="scale-125 hover:scale-[1.35] transition-all" />
+              </Link>
+            </MotionDiv>
             {/* explore */}
             <MotionDiv
               variants={fadeIn('up', 0.6)}
