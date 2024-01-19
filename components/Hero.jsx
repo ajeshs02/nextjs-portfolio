@@ -41,7 +41,7 @@ const Hero = () => {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true, amount: 0.7 }}
-              className="flex max-w-max gap-x-8 items-center mb-12 mx-auto text-white "
+              className="flex max-w-max gap-x-8 items-center mb-12 max-lg:mx-auto lg:ml-4 text-white "
             >
               <Link
                 href="https://github.com/JS-Wizardd"

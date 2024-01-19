@@ -3,11 +3,11 @@ import Link from 'next/link'
 
 const ProjectCard = ({ name, src, desc, link }) => {
   return (
-    <div className="card-shadow relative overflow-hidden flex  flex-col flex-grow min-w-44 max-sm:max-w-[80%] mx-auto gap-y-10 rounded-3xl border border-purple-950/50 bg-purple-950/30 hover:scale-[1.01] transition-all delay-500">
+    <div className="group card-shadow relative overflow-hidden flex  flex-col flex-grow min-w-44 max-sm:max-w-[80%] mx-auto gap-y-10 rounded-3xl border border-purple-950/50 bg-purple-950/30  transition-all delay-500">
       {/* image */}
       <div className="  overflow-hidden min-h-full rounded-xl">
         {/* overlay */}
-        <div className="h-fit group  relative w-full overflow-hidden rounded-b-3xl">
+        <div className="h-fit   relative w-full overflow-hidden rounded-b-3xl">
           <div className=" group-hover:bg-black/90 w-full h-full absolute z-40 transition-all duration-300 " />
 
           {/* img */}

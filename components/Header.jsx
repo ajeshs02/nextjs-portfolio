@@ -16,10 +16,14 @@ const Header = () => {
             Ajesh S
           </div>
           {/* resume */}
-          <button className="btn btn-sm projectCount flex gap-x-1 items-center px-6 hover:scale-105 transition-all">
+          <a
+            href="https://drive.google.com/uc?export=download&id=1nLGB3BDC8CH5hcF_EmTUCv8qvt7bTRaR"
+            download="Ajesh S Resume"
+            className="btn btn-sm projectCount flex gap-x-1 items-center px-6 hover:scale-[.87] transition-all scale-[0.85]"
+          >
             <p className="text-white font-semibold"> resume</p>{' '}
             <FaCloudDownloadAlt className="scale-105" />
-          </button>
+          </a>
         </div>
       </div>
     </header>

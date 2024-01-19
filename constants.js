@@ -92,6 +92,24 @@ export const Skill_set = [
     height: 45,
   },
   {
+    skill_name: 'Socket.IO',
+    Image: '/socket.webp',
+    width: 45,
+    height: 45,
+  },
+  {
+    skill_name: 'WebRTC',
+    Image: '/webrtc.webp',
+    width: 45,
+    height: 45,
+  },
+  {
+    skill_name: 'REST API',
+    Image: '/REST.webp',
+    width: 40,
+    height: 40,
+  },
+  {
     skill_name: 'Docker',
     Image: '/docker.webp',
     width: 40,

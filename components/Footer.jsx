@@ -26,9 +26,13 @@ const Footer = () => {
         </a>
       </div>
       <div className="flex flex-col gap-y-3">
-        <button className=" flex items-center gap-x-1 ">
+        <a
+          href="https://drive.google.com/uc?export=download&id=1nLGB3BDC8CH5hcF_EmTUCv8qvt7bTRaR"
+          download="Ajesh S Resume"
+          className=" flex items-center gap-x-1 "
+        >
           <FaCloudDownloadAlt className="scale-105" /> Resume
-        </button>
+        </a>
         <Link
           href="https://github.com/JS-Wizardd"
           target="_blank"
