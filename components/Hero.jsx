@@ -67,7 +67,7 @@ const Hero = () => {
             >
               <a
                 href="#about"
-                className=" relative  transition-all flex items-center justify-center gap-x-2 tracking-widest "
+                className=" relative btn btn-sm transition-all flex items-center justify-center gap-x-2 tracking-widest "
               >
                 Explore More <div className="down-arrow" />
               </a>
