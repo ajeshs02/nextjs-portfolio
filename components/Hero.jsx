@@ -22,7 +22,19 @@ const Hero = () => {
             </MotionH1>
 
             {/* Text Animation */}
-            <HeroText />
+            {/* <HeroText /> */}
+            <MotionDiv
+              variants={fadeIn('up', 0.4)}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{ once: true, amount: 0.7 }}
+              className="mb-6 text-2xl lg:text-[60px] font-secondary font-semibold uppercase leading-[1] text-white "
+            >
+              I am a{' '}
+              <span className="text-purple-800 hover:tracking-widest transition-all">
+                WEB DEVELOPER
+              </span>
+            </MotionDiv>
 
             {/* about */}
             <MotionP
