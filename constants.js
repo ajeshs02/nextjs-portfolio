@@ -97,12 +97,12 @@ export const Skill_set = [
     width: 45,
     height: 45,
   },
-  {
-    skill_name: 'WebRTC',
-    Image: '/webrtc.webp',
-    width: 45,
-    height: 45,
-  },
+  // {
+  //   skill_name: 'WebRTC',
+  //   Image: '/webrtc.webp',
+  //   width: 45,
+  //   height: 45,
+  // },
   {
     skill_name: 'REST API',
     Image: '/REST.webp',

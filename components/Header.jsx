@@ -1,14 +1,7 @@
 'use client'
 import { useRef, useEffect } from 'react'
 
-import Link from 'next/link'
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaTwitter,
-  FaCloudDownloadAlt,
-} from 'react-icons/fa'
+import { FaCloudDownloadAlt } from 'react-icons/fa'
 
 const Header = () => {
   const hoverRef = useRef(null)
@@ -50,7 +43,7 @@ const Header = () => {
       <div className="container mx-auto">
         <div className="flex  w-full justify-between items-center">
           <div
-            className="cursor-pointer rounded-full text-shadow text-2xl font-bold text-green hover:tracking-widest transition-all"
+            className="cursor-pointer rounded-full text-shadow text-2xl font-bold text-yellow hover:tracking-widest transition-all"
             data-value="AJESH"
             ref={hoverRef}
           >
@@ -60,7 +53,7 @@ const Header = () => {
           <a
             href="https://drive.google.com/file/d/19_AIREJ1SKcZ_f0y3giKg-o63bCL9u9I/view?usp=sharing"
             target="_blank"
-            className="btn btn-sm gradient text-gray-700 flex gap-x-1 items-center px-6 hover:scale-[.87] transition-all scale-[0.85]"
+            className="cursor-pointer flex border border-green justify-center items-center px-3 text-sm gap-x-1 h-10 rounded-3xl whitespace-nowrap font-bold text-green hover:text-white bg-black/5 transition-all hover:bg-green"
           >
             <p className="font-semibold"> resume</p>{' '}
             <FaCloudDownloadAlt className="scale-105" />

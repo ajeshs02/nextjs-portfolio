@@ -39,7 +39,7 @@ const Filters = () => {
           viewport={{ once: true, amount: 0.3 }}
           key={link.id}
           onClick={() => handleFilter(link.category)}
-          className={`bg-purple-950/20 ${
+          className={`bg-purple-950/20 cursor-pointer ${
             active === link.category && 'gradient text-slate-800 '
           }   whitespace-nowrap rounded-xl px-4 py-2 capitalize `}
         >
