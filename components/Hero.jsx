@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className="h-[91vh] flex items-center snap-start" id="home">
+    <section className="h-screen flex items-center snap-start" id="home">
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
           {/* ṭext */}
@@ -16,25 +16,14 @@ const Hero = () => {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true, amount: 0.7 }}
-              className={`text-white  text-[55px] mb-1 font-bold leading-[1.2] lg:text-[110px]`}
+              className={`text-white  text-[55px] mb-1 font-bold leading-[1.2] md:text-[80px] xl:text-[110px]`}
             >
               AJESH S.
             </MotionH1>
 
             {/* Text Animation */}
+            <HeroText />
             {/* <HeroText /> */}
-            <MotionDiv
-              variants={fadeIn('up', 0.4)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true, amount: 0.7 }}
-              className="mb-6 text-2xl lg:text-[60px] font-secondary font-semibold uppercase leading-[1] text-white "
-            >
-              I am a{' '}
-              <span className="text-purple-800 hover:tracking-widest transition-all">
-                WEB DEVELOPER
-              </span>
-            </MotionDiv>
 
             {/* about */}
             <MotionP
@@ -42,10 +31,10 @@ const Hero = () => {
               initial="hidden"
               whileInView={'show'}
               viewport={{ once: true, amount: 0.7 }}
-              className={`mb-8 max-w-lg mx-auto lg:mx-0 font-medium tracking-widest text-gray-500 `}
+              className={`mb-8 max-w-lg mx-auto lg:mx-0 font-medium tracking-widest text-slate-300 `}
             >
               I build solid and scalable websites with great user experience.
-              Specialised in MERN stack / Next.Js
+              Specializing in MERN stack / Next.Js
             </MotionP>
             {/* explore */}
             <MotionDiv
@@ -79,7 +68,7 @@ const Hero = () => {
             >
               <a
                 href="#about"
-                className=" relative btn btn-sm transition-all flex items-center justify-center gap-x-2 tracking-widest "
+                className=" relative gradient transition-all px-4 py-2 rounded-3xl flex items-center justify-center gap-x-2 tracking-widest text-gray-700 hover:text-black font-semibold"
               >
                 Explore More <div className="down-arrow" />
               </a>

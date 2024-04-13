@@ -15,30 +15,31 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="flex-1"
           >
-            <h2 className="h2 text-accent font-bold">About Me</h2>
+            <h2 className="h2 gradient-short-text font-bold">About Me</h2>
             <h3
-              className={`text-white transition-all text-2xl font-semibold mb-4`}
+              className={`text-gray-100 transition-all text-2xl font-[500] mb-4`}
             >
-              A self taught web developer who build awesome websites with React,
-              Next.Js and MERN stack.
+              A self taught web developer who build awesome websites with{' '}
+              <span className="text-purple">React</span>,{' '}
+              <span className="text-green">Next.Js</span>,{' '}
+              <span className="text-yellow">MERN</span> stack.
             </h3>
             <p className={`text-gray-300 transition-all mb-6 `}>
               My coding journey began after my BCA graduation. I've since
               immersed myself in web development, accruing substantial
-              experience through various projects and freelancing endeavors.
+              experience through various projects and{' '}
+              <span className="text-purple">freelancing</span> endeavors.
               <br />
               <br />
               My primary aspiration is to master modern web development and give
-              users the{' '}
-              <span className="text-purple-600">
-                best user-experience{' '}
-              </span>{' '}
-              they deserve, while adhering to scalabilty, security and other
-              industry standard practices.
+              users the best{' '}
+              <span className="text-yellow">user-experience </span> they
+              deserve, while adhering to scalabilty, security and other industry
+              standard practices.
             </p>
             {/* stats */}
             <div className="flex gap-x-6 lg:gap-x-12 mb-12">
-              <div className="bg-white p-4 rounded-tl-3xl rounded-br-3xl rounded projectCount">
+              <div className="cursor-default">
                 {/* counter */}
                 <ProjectCounter />
                 <div
@@ -50,16 +51,6 @@ const About = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="flex gap-x-8 items-center ">
-              <div className="btn btn-lg flex items-center">
-                <a
-                  href="#work"
-                  className="hover:scale-[1.01]  active:scale-[0.99] transition-all   "
-                >
-                  view projects
-                </a>
-              </div>
-            </div> */}
           </MotionDiv>
         </div>
       </div>

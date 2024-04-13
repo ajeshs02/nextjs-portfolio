@@ -28,6 +28,10 @@ module.exports = {
         primary: '#11071f',
         secondary: '#2c1250',
         accent: '#7026b8',
+        bg: '#1d1d1f',
+        purple: '#a374ff',
+        green: '#17f1d1',
+        yellow: '#ffd074',
       },
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",

@@ -6,15 +6,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.btn {
-  background: linear-gradient(
-    96deg,
-    rgba(45, 0, 90, 1) 0%,
-    rgba(69, 30, 89, 1) 99%
-  );
-  font-weight: 700;
-  box-shadow: 0px 4.42184px 115.23px rgba(90, 33, 159, 1);
-}
 .projectCount {
   background: linear-gradient(
     96deg,
@@ -23,17 +14,6 @@ html {
   );
 
   box-shadow: 0px 4.42184px 115.23px rgba(90, 33, 159, 1);
-}
-.filter {
-  background: linear-gradient(
-    96deg,
-    rgba(45, 0, 90, 1) 0%,
-    rgba(69, 30, 89, 1) 99%
-  );
-}
-
-.btn:hover {
-  box-shadow: 0px 4.42184px 100.23px rgba(90, 33, 159, 0.8);
 }
 
 .card-shadow {
@@ -45,13 +25,17 @@ html {
 }
 
 .gradient {
-  background: linear-gradient(
-    92.23deg,
-    #406aff 21.43%,
-    #3bace2 50.63%,
-    #b936ee 100%,
-    #ff56f6 117.04%
-  );
+  background: linear-gradient(45deg, #a374ff, #ffd074);
+}
+.gradient-text {
+  background: linear-gradient(45deg, #a374ff, #ffd074);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-short-text {
+  background: linear-gradient(10deg, #a374ff, #ffd074);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .active {
@@ -104,10 +88,10 @@ select:-webkit-autofill:focus {
 
 @layer base {
   body {
-    @apply font-secondary text-lg leading-8 text-white;
+    @apply font-secondary bg-bg text-lg leading-8 text-white;
   }
   .h2 {
-    @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
+    @apply font-primary text-[34px] mb-6 tracking-[10%] uppercase;
   }
   .h3 {
     @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
@@ -129,7 +113,7 @@ select:-webkit-autofill:focus {
     @apply bg-gradient-to-r text-transparent bg-clip-text from-[#b936ee] to-[#451e59] font-bold font-primary;
   }
   .section {
-    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+    @apply py-8 lg:py-24 lg:h-screen  flex items-center overflow-hidden;
   }
   .about-section {
     @apply py-8 lg:py-24  flex items-center;
@@ -176,4 +160,31 @@ select:-webkit-autofill:focus {
   100% {
     margin-top: 0;
   }
+}
+
+#blob {
+  background-color: white;
+  height: 300px;
+  aspect-ratio: 1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  opacity: 0.7;
+  background: linear-gradient(to right, #ffd074, #a374ff);
+  animation: rotate 20s infinite;
+  z-index: -1;
+}
+
+#blur {
+  height: 100% !important;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  backdrop-filter: blur(100px);
 }

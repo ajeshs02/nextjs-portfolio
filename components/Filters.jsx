@@ -1,15 +1,19 @@
 'use client'
 
-import { formUrlQuery } from '@/sanity/utils'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { MotionBtn } from './MotionElm'
 import { fadeIn } from '@/variants'
+import { formUrlQuery } from '@/utils/work'
 
-const links = ['NextJs', 'ReactJs', 'MERN']
+const links = [
+  { name: 'NextJs', id: 1, category: 'nextjs' },
+  { name: 'ReactJs', id: 2, category: 'react' },
+  { name: 'MERN', id: 3, category: 'mern' },
+]
 
 const Filters = () => {
-  const [active, setActive] = useState('NextJs')
+  const [active, setActive] = useState('nextjs')
   const searchParams = useSearchParams()
   const router = useRouter()
 
@@ -33,13 +37,13 @@ const Filters = () => {
           initial="hidden"
           whileInView={'show'}
           viewport={{ once: true, amount: 0.3 }}
-          key={link}
-          onClick={() => handleFilter(link)}
+          key={link.id}
+          onClick={() => handleFilter(link.category)}
           className={`bg-purple-950/20 ${
-            active === link && 'filter'
-          } text-white whitespace-nowrap rounded-xl px-4 py-2 capitalize `}
+            active === link.category && 'gradient text-slate-800 '
+          }   whitespace-nowrap rounded-xl px-4 py-2 capitalize `}
         >
-          {link}
+          {link.name}
         </MotionBtn>
       ))}
     </ul>

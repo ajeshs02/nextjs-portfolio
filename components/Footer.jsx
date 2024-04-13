@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className=" flex justify-between items-center  border-purple-700/20 gap-y-10 border-t  px-3 sm:px-20 py-12 text-base tracking-wider transition-all text-gray-500">
+    <footer className="bg-yellow flex justify-between items-center   gap-y-10 border-t  px-3 sm:px-20 py-12 text-base tracking-wider transition-all text-primary">
       <div className="flex flex-col">
         <p className="hover:tracking-widest transition-all">Ajesh S</p>
         <a
@@ -34,7 +34,7 @@ const Footer = () => {
           <FaCloudDownloadAlt className="scale-105" /> Resume
         </a> */}
         <Link
-          href="https://github.com/JS-Wizardd"
+          href="https://github.com/ajeshs02"
           target="_blank"
           className="flex items-center gap-x-1 "
         >

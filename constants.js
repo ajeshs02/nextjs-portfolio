@@ -123,3 +123,67 @@ export const Skill_set = [
     height: 35,
   },
 ]
+
+import carShowcase from './app/images/car_showcase.webp'
+import ecommerce from './app/images/ecommerce.webp'
+import evently from './app/images/evently.webp'
+import yt from './app/images/yt.webp'
+import portfolio from './app/images/portfolio.webp'
+
+export const projects = [
+  {
+    id: 1,
+    title: 'Carhub',
+    subtitle: 'A car showcasing platform',
+    description:
+      ' Built with Next.js and TypeScript, featuring advanced filtering and Rapid API integration for showcasing cars.',
+    image: carShowcase,
+    link: 'https://car-showcase-vert-six.vercel.app/',
+    github: 'https://github.com/ajeshs02/car_showcase',
+    category: 'nextjs',
+  },
+  {
+    id: 2,
+    title: 'Evently',
+    subtitle: 'An Event Management Platform',
+    description:
+      'A Next.js platform with  Stripe payment integration for efficient event management.',
+    image: evently,
+    link: 'https://evently-six-topaz.vercel.app/',
+    github: 'https://github.com/ajeshs02/event_platform',
+    category: 'nextjs',
+  },
+  {
+    id: 3,
+    title: 'Ajesh Portfolio',
+    subtitle: 'My portfolio',
+    description:
+      ' Created with Next.js utilizing its SSR capabilities, to showcase my professional portfolio.',
+    image: portfolio,
+    link: 'https://ajesh-s.vercel.app/',
+    github: 'https://github.com/ajeshs02/NextJS-Portfolio',
+    category: 'nextjs',
+  },
+  {
+    id: 4,
+    title: 'Youtube 2.0',
+    subtitle: 'A modern youtube app',
+    description:
+      'A modern YouTube app using React, Material UI, and Rapid API for a seamless video experience',
+    image: yt,
+    link: 'https://youtube-2-0-five.vercel.app/',
+    github: 'https://github.com/ajeshs02/youtube-2.0',
+    category: 'react',
+  },
+  {
+    id: 5,
+    title: 'Gadget Bazaar',
+    subtitle: 'An Ecommerce platform',
+    description:
+      ' A fullstack MERN e-commerce platform for buying tech gadgets, with Redux Toolkit and payment integration.',
+    image: ecommerce,
+    link: '',
+    github: 'https://github.com/ajeshs02/e-commerce',
+    category: 'mern',
+  },
+]

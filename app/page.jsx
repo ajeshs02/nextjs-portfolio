@@ -5,12 +5,11 @@ import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Skills from '@/components/Skills'
 import Work from '@/components/Work'
+import Wrapper from '@/components/Wrapper'
 
 const page = ({ searchParams }) => {
   return (
-    <div
-      className={`bg-primary text-black max-md:px-2  overflow-x-hidden transition-all duration-500 snap-y snap-mandatory`}
-    >
+    <Wrapper>
       <Header />
       <Hero />
       <About />
@@ -18,7 +17,7 @@ const page = ({ searchParams }) => {
       <Skills />
       <Contact />
       <Footer />
-    </div>
+    </Wrapper>
   )
 }
 export default page

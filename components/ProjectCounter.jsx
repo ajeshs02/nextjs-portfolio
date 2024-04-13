@@ -6,12 +6,15 @@ const ProjectCounter = () => {
     threshold: 0.5,
   })
   return (
-    <div ref={ref} className="text-[40px] font-tertiary text-gradient mb-2">
+    <div
+      ref={ref}
+      className="text-[40px] font-tertiary font-bold text-green mb-2"
+    >
       {inView ? (
         <CountUp
           delay={0.5}
           start={0}
-          end={22}
+          end={10}
           duration={4}
           enableScrollSpy={false}
           scrollSpyOnce={true}

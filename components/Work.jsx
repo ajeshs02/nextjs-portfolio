@@ -1,18 +1,19 @@
 import { fadeIn } from '../variants'
 import { MotionDiv } from './MotionElm'
 import Filters from './Filters'
-import { getProjects } from '@/sanity/actions'
 import ProjectCard from './ProjectCard'
+import { projects } from '@/constants'
 
 const Work = async ({ searchParams }) => {
-  const projects = await getProjects({
-    category: searchParams?.category || 'NextJs',
-    page: '1',
-  })
+  let category = searchParams?.category || 'nextjs'
+
+  const filteredProjects = projects.filter(
+    (project) => project.category === category
+  )
 
   return (
     <section
-      className="!min-h-[50vh]  h-fit sm:h-[70vh] !max-h-fit py-3 max-md:mt-44"
+      className="min-h-[50vh]  !h-auto sm:h-[70vh] max-h-auto py-3 "
       id="work"
     >
       <div className="container mx-auto w-full">
@@ -25,16 +26,14 @@ const Work = async ({ searchParams }) => {
             className="flex-1 flex flex-col gap-y-4  lg:mb-0"
           >
             {/* text */}
-            <h2 className="h2 leading-tight  lg:mt-24 font-bold text-accent">
-              My Works
-            </h2>
+            <h2 className="h2 gradient-short-text font-bold">My Works</h2>
           </MotionDiv>
 
           <div className="w-full justify-center">
             <Filters />
           </div>
           {/* project grid */}
-          {projects?.length > 0 ? (
+          {filteredProjects.length > 0 ? (
             <MotionDiv
               variants={fadeIn('right', 0.05)}
               initial="hidden"
@@ -42,20 +41,22 @@ const Work = async ({ searchParams }) => {
               viewport={{ once: true, amount: 0.3 }}
               className="mt-12 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 gap-y-7"
             >
-              {projects.map((project, index) => (
+              {filteredProjects.map((project) => (
                 <ProjectCard
-                  key={index}
-                  name={project.name}
+                  key={project.id}
+                  title={project.title}
+                  subtitle={project.subtitle}
                   desc={project.description}
                   src={project.image}
                   link={project.link}
+                  github={project.github}
                 />
               ))}
             </MotionDiv>
           ) : (
             <div className="h-72 flex justify-center items-center">
               <p className="body-regular text-white-400 text-xl text-white">
-                Oops,No {searchParams?.category} Projects found !
+                Oops, No {category} Projects found !
               </p>
             </div>
           )}

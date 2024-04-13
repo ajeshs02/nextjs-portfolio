@@ -11,13 +11,13 @@ const HeroText = () => {
       initial="hidden"
       whileInView={'show'}
       viewport={{ once: true, amount: 0.7 }}
-      className="mb-6 text-2xl lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
+      className="mb-6 text-2xl md:text-[45px] xl:text-[56px] font-secondary font-semibold uppercase leading-[1] w-full min-w-full h-max"
     >
       <span className={`text-white transition-all  mr-2`}>I am a</span>
       <TypeAnimation
         sequence={['Web Developer', 2000, 'Freelancer', 2000]}
         speed={30}
-        className="text-purple-800"
+        className="gradient-text"
         wrapper="span"
         repeat={Infinity}
       />

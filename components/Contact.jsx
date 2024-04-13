@@ -8,6 +8,9 @@ import { FaCloudDownloadAlt } from 'react-icons/fa'
 
 const Contact = () => {
   const form = useRef()
+  const nameRef = useRef()
+  const emailRef = useRef()
+  const messageRef = useRef()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -16,6 +19,18 @@ const Contact = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault()
+
+    if (!name) {
+      nameRef.current.focus()
+      return
+    } else if (!email) {
+      emailRef.current.focus()
+      return
+    } else if (!message) {
+      messageRef.current.focus()
+      return
+    }
+
     setIsLoading(true)
     setButtonText('Sending...')
 
@@ -45,7 +60,7 @@ const Contact = () => {
   }
 
   return (
-    <div className=" section max-md:mt-44" id="contact">
+    <div className=" section max-md:mt-44 mb-20" id="contact">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           {/* text */}
@@ -57,7 +72,7 @@ const Contact = () => {
             className="flex-1 flex justify-start items-center"
           >
             <div>
-              <h1 className="h2 leading-tight  lg:mt-24 font-bold text-accent">
+              <h1 className="h2 leading-tight  lg:mt-24 font-bold text-yellow">
                 Get in touch
               </h1>
               <h2
@@ -75,21 +90,25 @@ const Contact = () => {
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: true, amount: 0.3 }}
-            className={`flex-1 border border-purple-700 shadow-sm  text-white shadow-purple-300 rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start`}
+            className={`flex-1 border border-green shadow-sm  text-white shadow-purple-300 rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start`}
           >
             <input
               type="text"
+              ref={nameRef}
               value={name}
               required
               name="name"
+              pattern="^[a-zA-Z\s]{3,}$"
+              title="Please enter a valid name"
               onChange={(e) => setName(e.target.value)}
               placeholder="Your name"
               className={`bg-transparent border-b border-purple-500 py-3 outline-none w-full
-              placeholder:text-white focus:border-accent transition-all`}
+              placeholder:text-white focus:border-green transition-all`}
             />
 
             <input
               type="email"
+              ref={emailRef}
               autoComplete="off"
               value={email}
               required
@@ -97,21 +116,24 @@ const Contact = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email"
               className={`bg-transparent border-b border-purple-500 py-3 outline-none w-full
-              placeholder:text-white focus:border-accent transition-all`}
+              placeholder:text-white focus:border-green transition-all`}
             />
 
             <textarea
               placeholder="Your message"
+              ref={messageRef}
               value={message}
               required
               name="message"
               onChange={(e) => setMessage(e.target.value)}
               className={`bg-transparent border-b border-purple-500 py-3 outline-none w-full
-              placeholder:text-white focus:border-accent transition-all resize-none mb-12`}
+              placeholder:text-white focus:border-green transition-all resize-none mb-12`}
             ></textarea>
             <button
-              disabled={isLoading || !name || !email || !message}
-              className={`btn btn-lg ${isLoading && 'cursor-wait'} `}
+              disabled={isLoading}
+              className={`btn btn-lg bg-green text-primary  font-bold cursor-pointer ${
+                isLoading && 'cursor-wait'
+              } `}
             >
               {buttonText}
             </button>
