@@ -45,7 +45,7 @@ const Hero = () => {
               className="flex max-w-max gap-x-8 items-center mb-12 max-lg:mx-auto lg:ml-4 text-white "
             >
               <Link
-                href="https://github.com/JS-Wizardd"
+                href="https://github.com/ajeshs02"
                 target="_blank"
                 className=""
               >

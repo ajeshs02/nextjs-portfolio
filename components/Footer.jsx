@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-yellow flex justify-between items-center   gap-y-10 border-t  px-3 sm:px-20 py-12 text-base tracking-wider transition-all text-primary">
+    <footer className="bg-yellow flex justify-between items-center   gap-y-10 border-t  px-3 sm:px-20 py-20 text-base tracking-wider transition-all text-primary">
       <div className="flex flex-col">
         <p className="hover:tracking-widest transition-all">Ajesh S</p>
         <a
