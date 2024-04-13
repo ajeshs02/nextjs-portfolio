@@ -34,15 +34,10 @@ const Work = async ({ searchParams }) => {
           </div>
           {/* project grid */}
           {filteredProjects.length > 0 ? (
-            <MotionDiv
-              variants={fadeIn('right', 0.05)}
-              initial="hidden"
-              whileInView={'show'}
-              viewport={{ once: true, amount: 0.3 }}
-              className="mt-12 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 gap-y-7"
-            >
-              {filteredProjects.map((project) => (
+            <div className="mt-12 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 gap-y-7">
+              {filteredProjects.map((project, index) => (
                 <ProjectCard
+                  index={index}
                   key={project.id}
                   title={project.title}
                   subtitle={project.subtitle}
@@ -52,7 +47,7 @@ const Work = async ({ searchParams }) => {
                   github={project.github}
                 />
               ))}
-            </MotionDiv>
+            </div>
           ) : (
             <div className="h-72 flex justify-center items-center">
               <p className="body-regular text-white-400 text-xl text-white">

@@ -1,11 +1,4 @@
-import Link from 'next/link'
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaTwitter,
-  FaCloudDownloadAlt,
-} from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -33,22 +26,24 @@ const Footer = () => {
         >
           <FaCloudDownloadAlt className="scale-105" /> Resume
         </a> */}
-        <Link
+        <a
           href="https://github.com/ajeshs02"
           target="_blank"
           className="flex items-center gap-x-1 "
+          aria-label="Github profile page"
         >
           <FaGithub />
           Github
-        </Link>
-        <Link
+        </a>
+        <a
           href="https://www.linkedin.com/in/ajesh-s-a507792a7/"
           target="_blank"
           className="flex items-center gap-x-1 "
+          aria-label="LinkedIn profile page"
         >
           <FaLinkedin />
           LinkedIn
-        </Link>
+        </a>
       </div>
     </footer>
   )

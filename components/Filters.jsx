@@ -2,9 +2,9 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
-import { MotionBtn } from './MotionElm'
 import { fadeIn } from '@/variants'
 import { formUrlQuery } from '@/utils/work'
+import { MotionLi } from './MotionElm'
 
 const links = [
   { name: 'NextJs', id: 1, category: 'nextjs' },
@@ -32,7 +32,7 @@ const Filters = () => {
   return (
     <ul className=" text-white-800 body-text no-scrollbar flex w-full justify-start max-sm:justify-center gap-x-4 max-w-full  overflow-auto py-6 sm:max-w-2xl">
       {links.map((link) => (
-        <MotionBtn
+        <MotionLi
           variants={fadeIn('left', 0.1)}
           initial="hidden"
           whileInView={'show'}
@@ -44,7 +44,7 @@ const Filters = () => {
           }   whitespace-nowrap rounded-xl px-4 py-2 capitalize `}
         >
           {link.name}
-        </MotionBtn>
+        </MotionLi>
       ))}
     </ul>
   )

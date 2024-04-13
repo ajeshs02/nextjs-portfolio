@@ -2,10 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaGithub } from 'react-icons/fa'
 import { TbWorldWww } from 'react-icons/tb'
+import { MotionDiv } from './MotionElm'
+import { fadeIn } from '@/variants'
 
-const ProjectCard = ({ title, subtitle, desc, src, link, github }) => {
+const ProjectCard = ({ index, title, subtitle, desc, src, link, github }) => {
   return (
-    <div className="group card-shadow relative overflow-hidden flex  flex-col flex-grow min-w-44 max-sm:max-w-[80%] mx-auto gap-y-10 rounded-3xl  bg-purple-950/30  transition-all delay-500 h-fit bg-purple/10">
+    <MotionDiv
+      variants={fadeIn('right', 0.05 * index)}
+      initial="hidden"
+      whileInView={'show'}
+      viewport={{ once: true, amount: 0.3 }}
+      className="group card-shadow relative overflow-hidden flex  flex-col flex-grow min-w-44 max-sm:max-w-[80%] mx-auto gap-y-10 rounded-3xl  bg-purple-950/30  transition-all delay-500 h-fit bg-purple/10"
+    >
       {/* image */}
       <div className="  overflow-hidden min-h-full rounded-xl">
         {/* overlay */}
@@ -27,7 +35,7 @@ const ProjectCard = ({ title, subtitle, desc, src, link, github }) => {
         </div>
         {/* bottom */}
         <div className="flex flex-col mt-2 w-full h-full p-3">
-          <h4 className="text-white font-medium ">{title}</h4>
+          <h2 className="text-white font-medium ">{title}</h2>
           <p className="text-gray-400 text-sm">{subtitle}</p>
           <div className="flex justify-between items-center my-2">
             {link && (
@@ -51,7 +59,7 @@ const ProjectCard = ({ title, subtitle, desc, src, link, github }) => {
           </div>
         </div>
       </div>
-    </div>
+    </MotionDiv>
   )
 }
 export default ProjectCard

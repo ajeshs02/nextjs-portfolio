@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className="h-screen flex items-center snap-start" id="home">
+    <section className="h-[85vh] flex items-center snap-start" id="home">
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
           {/* ṭext */}
@@ -44,19 +44,21 @@ const Hero = () => {
               viewport={{ once: true, amount: 0.7 }}
               className="flex max-w-max gap-x-8 items-center mb-12 max-lg:mx-auto lg:ml-4 text-white "
             >
-              <Link
+              <a
                 href="https://github.com/ajeshs02"
                 target="_blank"
+                aria-label="Ajesh's GitHub Profile"
                 className=""
               >
                 <FaGithub className="scale-125 hover:scale-[1.35] transition-all" />
-              </Link>
-              <Link
+              </a>
+              <a
                 href="https://www.linkedin.com/in/ajesh-s-a507792a7/"
                 target="_blank"
+                aria-label="Ajesh's LinkedIn Profile"
               >
                 <FaLinkedin className="scale-125 hover:scale-[1.35] transition-all" />
-              </Link>
+              </a>
             </MotionDiv>
             {/* explore */}
             <MotionDiv

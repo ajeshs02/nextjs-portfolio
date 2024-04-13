@@ -7,3 +7,4 @@ export const MotionH1 = motion.h1
 export const MotionForm = motion.form
 export const MotionBtn = motion.button
 export const MotionP = motion.p
+export const MotionLi = motion.li

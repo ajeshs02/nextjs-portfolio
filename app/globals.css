@@ -7,11 +7,7 @@ html {
 }
 
 .projectCount {
-  background: linear-gradient(
-    96deg,
-    rgba(45, 0, 90, 1) 0%,
-    rgba(69, 30, 89, 1) 99%
-  );
+  background: linear-gradient(96deg, #a374ff 0%, #ffd074 99%);
 
   box-shadow: 0px 4.42184px 115.23px rgba(90, 33, 159, 1);
 }
@@ -67,23 +63,30 @@ select:-webkit-autofill:focus {
   color: white !important;
 }
 
-/* scrollbar */
-
-#scrollbar::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  background-color: #5b4040;
+/* scrollbar styling */
+/* For Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px !important;
 }
 
-#scrollbar::-webkit-scrollbar {
-  width: 12px;
-  background-color: #aa1515;
+::-webkit-scrollbar-track {
+  background-color: #1d1d1f;
 }
 
-#scrollbar::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
+  background-color: #a374ff;
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #822ada;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a374ff;
+}
+
+/* For Internet Explorer and Edge */
+body {
+  scrollbar-face-color: #a374ff;
+  scrollbar-track-color: #a374ff;
 }
 
 @layer base {

@@ -60,7 +60,7 @@ const Header = () => {
           <a
             href="https://drive.google.com/file/d/19_AIREJ1SKcZ_f0y3giKg-o63bCL9u9I/view?usp=sharing"
             target="_blank"
-            className="btn btn-sm gradient projectCount text-gray-700 flex gap-x-1 items-center px-6 hover:scale-[.87] transition-all scale-[0.85]"
+            className="btn btn-sm gradient text-gray-700 flex gap-x-1 items-center px-6 hover:scale-[.87] transition-all scale-[0.85]"
           >
             <p className="font-semibold"> resume</p>{' '}
             <FaCloudDownloadAlt className="scale-105" />
