@@ -36,7 +36,7 @@ const Footer = () => {
           Github
         </a>
         <a
-          href="https://www.linkedin.com/in/ajesh-s-a507792a7/"
+          href="www.linkedin.com/in/ajesh02"
           target="_blank"
           className="flex items-center gap-x-1 "
           aria-label="LinkedIn profile page"

@@ -53,7 +53,7 @@ const Hero = () => {
                 <FaGithub className="scale-125 hover:scale-[1.35] transition-all" />
               </a>
               <a
-                href="https://www.linkedin.com/in/ajesh-s-a507792a7/"
+                href="www.linkedin.com/in/ajesh02"
                 target="_blank"
                 aria-label="Ajesh's LinkedIn Profile"
               >
