@@ -1,37 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     fontFamily: {
-      primary: ['Inter', 'sans-serif'],
-      secondary: ['Open Sans', 'sans-serif'],
-      tertiary: ['Montserrat', 'sans-serif'],
-      quaternary: ['PT Sans', 'sans-serif'],
+      primary: ["Inter", "sans-serif"],
+      secondary: ["Open Sans", "sans-serif"],
+      tertiary: ["Montserrat", "sans-serif"],
+      quaternary: ["PT Sans", "sans-serif"],
     },
     container: {
       padding: {
-        DEFAULT: '15px',
+        DEFAULT: "15px",
       },
     },
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '960px',
-      xl: '1200px',
+      sm: "640px",
+      md: "768px",
+      lg: "960px",
+      xl: "1200px",
     },
     extend: {
       colors: {
-        primary: '#11071f',
-        secondary: '#2c1250',
-        accent: '#7026b8',
-        bg: '#1d1d1f',
-        purple: '#a374ff',
-        green: '#17f1d1',
-        yellow: '#ffd074',
+        primary: "#11071f",
+        secondary: "#2c1250",
+        accent: "#7026b8",
+        bg: "#0c0c0d",
+        purple: "#a374ff",
+        green: "#17f1d1",
+        yellow: "#ffd074",
       },
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",
@@ -41,4 +41,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
