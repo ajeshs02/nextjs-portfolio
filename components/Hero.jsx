@@ -1,8 +1,8 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { fadeIn } from '../variants'
-import HeroText from './HeroText'
-import { MotionDiv, MotionH1, MotionP } from './MotionElm'
-import Link from 'next/link'
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { fadeIn } from "../variants";
+import HeroText from "./HeroText";
+import { MotionDiv, MotionH1, MotionP } from "./MotionElm";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -10,11 +10,11 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
           {/* ṭext */}
-          <div className="flex-1  text-center font-secondary lg:text-left">
+          <div className="flex-1 text-center font-secondary lg:text-left">
             <MotionH1
-              variants={fadeIn('up', 0.3)}
+              variants={fadeIn("up", 0.3)}
               initial="hidden"
-              whileInView={'show'}
+              whileInView={"show"}
               viewport={{ once: true, amount: 0.7 }}
               className={`text-white  text-[55px] mb-1 font-bold leading-[1.2] md:text-[80px] xl:text-[110px]`}
             >
@@ -27,22 +27,22 @@ const Hero = () => {
 
             {/* about */}
             <MotionP
-              variants={fadeIn('up', 0.5)}
+              variants={fadeIn("up", 0.5)}
               initial="hidden"
-              whileInView={'show'}
+              whileInView={"show"}
               viewport={{ once: true, amount: 0.7 }}
-              className={`mb-8 max-w-lg mx-auto lg:mx-0 font-medium tracking-widest text-slate-300 `}
+              className={`mx-auto mb-8 max-w-lg font-medium tracking-widest lg:mx-0 text-slate-300`}
             >
               I build solid and scalable websites with great user experience.
-              Specializing in MERN stack / Next.Js
+              Specializing in Next.Js / MERN Stack.
             </MotionP>
             {/* explore */}
             <MotionDiv
-              variants={fadeIn('up', 0.6)}
+              variants={fadeIn("up", 0.6)}
               initial="hidden"
-              whileInView={'show'}
+              whileInView={"show"}
               viewport={{ once: true, amount: 0.7 }}
-              className="flex max-w-max gap-x-8 items-center mb-12 max-lg:mx-auto lg:ml-4 text-white "
+              className="flex gap-x-8 items-center mb-12 max-w-max text-white max-lg:mx-auto lg:ml-4"
             >
               <a
                 href="https://github.com/ajeshs02"
@@ -62,17 +62,17 @@ const Hero = () => {
             </MotionDiv>
             {/* explore */}
             <MotionDiv
-              variants={fadeIn('up', 0.6)}
+              variants={fadeIn("up", 0.6)}
               initial="hidden"
-              whileInView={'show'}
+              whileInView={"show"}
               viewport={{ once: true, amount: 0.7 }}
-              className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0 text-purple-600/70"
+              className="flex gap-x-6 items-center mx-auto mb-12 max-w-max lg:mx-0 text-purple-600/70"
             >
               <a
                 href="#about"
-                className=" relative gradient transition-all px-4 py-2 rounded-3xl flex items-center justify-center gap-x-2 tracking-widest text-gray-700 hover:text-black font-semibold"
+                className="flex relative gap-x-2 justify-center items-center px-4 py-2 font-semibold tracking-widest text-gray-700 rounded-3xl transition-all gradient hover:text-black"
               >
-                Explore More <div className="down-arrow" />
+                About me <div className="down-arrow" />
               </a>
             </MotionDiv>
           </div>
@@ -89,6 +89,6 @@ const Hero = () => {
         <div id="about" />
       </div>
     </section>
-  )
-}
-export default Hero
+  );
+};
+export default Hero;
