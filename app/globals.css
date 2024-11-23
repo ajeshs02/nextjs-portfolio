@@ -159,7 +159,7 @@ select:-webkit-autofill:focus {
   opacity: 0.7;
   background: linear-gradient(to right, #ffd074, #a374ff);
   animation: rotate 20s infinite;
-  z-index: -1 !important;
+  z-index: 0 !important;
 }
 
 #blur {
@@ -170,6 +170,6 @@ select:-webkit-autofill:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1 !important;
+  z-index: 0 !important;
   backdrop-filter: blur(100px) !important;
 }
