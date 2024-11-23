@@ -1,26 +1,37 @@
-import Approach from "@/components/Approach";
-// import Clients from "@/components/Clients";
-import Experience from "@/components/Experience";
-import Footer from "@/components/Footer";
-import Grid from "@/components/Grid";
-import Hero from "@/components/Hero";
-import RecentProjects from "@/components/RecentProjects";
+import dynamic from "next/dynamic";
+import Wrapper from "@/components/Wrapper";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
-import Wrapper from "@/components/Wrapper";
+import Hero from "@/components/Hero";
+import Grid from "@/components/Grid";
+import { Suspense } from "react";
+import LazyLoader from "@/components/LazyLoader";
+
+// Dynamic imports
+const RecentProjects = dynamic(() => import("@/components/RecentProjects"));
+const Experience = dynamic(() => import("@/components/Experience"));
+const Approach = dynamic(() => import("@/components/Approach"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 export default function Home() {
   return (
     <Wrapper>
-      <div className="max-w-7xl w-full ">
+      <div className="w-full max-w-7xl">
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
-        <RecentProjects />
-        {/* <Clients /> */}
-        <Experience />
-        <Approach />
-        <Footer />
+        <Suspense fallback={<LazyLoader />}>
+          <RecentProjects />
+        </Suspense>
+        <Suspense fallback={<LazyLoader />}>
+          <Experience />
+        </Suspense>
+        <Suspense fallback={<LazyLoader />}>
+          <Approach />
+        </Suspense>
+        <Suspense fallback={<LazyLoader />}>
+          <Footer />
+        </Suspense>
       </div>
     </Wrapper>
   );
