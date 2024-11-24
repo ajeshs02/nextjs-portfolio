@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <Wrapper>
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-7xl relative ">
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />

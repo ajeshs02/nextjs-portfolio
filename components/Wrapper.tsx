@@ -27,7 +27,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <main className="flex overflow-hidden relative flex-col justify-center items-center px-5 bg-black-100 ms-auto sm:px-10">
+    <main className="flex overflow-x-hidden h-auto relative flex-col justify-center items-center  px-5 bg-black-100 ms-auto sm:px-10">
       <div id="blob" ref={blobRef} />
       <div id="blur" />
       {children}
