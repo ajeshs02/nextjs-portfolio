@@ -7,7 +7,7 @@ const Experience = () => {
   return (
     <div className="py-20 w-full" id="experience">
       <h1 className="heading">
-        My <span className="gradient-text drop-shadow-lg">Work Experience</span>
+        <span className="gradient-text drop-shadow-lg">My Work Experience</span>
       </h1>
 
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
