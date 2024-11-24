@@ -4,13 +4,15 @@ import { FaLocationArrow, FaGithub } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
+import Image from "next/image";
 
 const RecentProjects = () => {
   return (
-    <section className="py-20" id="projects">
-      <h1 className="heading">
-        A small selection of{" "}
-        <span className="gradient-text drop-shadow-lg ">recent projects</span>
+    <section className="py-24" id="projects">
+      <h1 className="heading z-10">
+        <span className="gradient-text drop-shadow-lg ">
+          A Small Selection of Recent Projects
+        </span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 ">
         {projects.map((item, index) => (
@@ -20,9 +22,11 @@ const RecentProjects = () => {
           >
             <PinContainer title={item.link} href={item.link}>
               <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10 rounded-xl">
-                <img
+                <Image
                   src={item.img}
                   alt="cover"
+                  width={400}
+                  height={350}
                   className="z-10 absolute bottom-0 object-cover"
                 />
               </div>

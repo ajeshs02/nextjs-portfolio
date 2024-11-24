@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import Wrapper from "@/components/Wrapper";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
@@ -6,12 +5,10 @@ import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import { Suspense } from "react";
 import LazyLoader from "@/components/LazyLoader";
-
-// Dynamic imports
-const RecentProjects = dynamic(() => import("@/components/RecentProjects"));
-const Experience = dynamic(() => import("@/components/Experience"));
-const Approach = dynamic(() => import("@/components/Approach"));
-const Footer = dynamic(() => import("@/components/Footer"));
+import RecentProjects from "@/components/RecentProjects";
+import Experience from "@/components/Experience";
+import Approach from "@/components/Approach";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (

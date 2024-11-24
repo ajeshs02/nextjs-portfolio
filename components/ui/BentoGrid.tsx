@@ -3,11 +3,9 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { useState } from "react";
-import animationData from "@/data/confetti.json";
-import GridGlobe from "./GridGlobe";
-import Lottie from "react-lottie";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -54,16 +52,6 @@ export const BentoGridItem = ({
 
   const [copied, setCopied] = useState(false);
 
-  // lottie default options
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   const handleCopy = () => {
     const text = "ajeshs.dev@gmail.com";
     navigator.clipboard.writeText(text);
@@ -86,9 +74,11 @@ export const BentoGridItem = ({
       >
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
+              width={200}
+              height={200}
               className={cn(imgClassName, "object-cover object-center ")}
             />
           )}
@@ -99,10 +89,11 @@ export const BentoGridItem = ({
           } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
-              //   width={220}
+              width={220}
+              height={220}
               className="object-cover object-center w-full h-full"
             />
           )}
@@ -128,9 +119,6 @@ export const BentoGridItem = ({
           >
             {title}
           </div>
-
-          {/* for the github 3d globe */}
-          {id === 2 && <GridGlobe />}
 
           {/* Tech stack list div */}
           {id === 3 && (
@@ -166,9 +154,7 @@ export const BentoGridItem = ({
                 className={`absolute -bottom-5 right-0 ${
                   copied ? "block" : "block"
                 }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
+              />
 
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy my email address"}
