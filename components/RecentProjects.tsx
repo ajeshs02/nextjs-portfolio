@@ -55,7 +55,23 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      {icon ? (
+                        <Image
+                          src={icon}
+                          width={40}
+                          height={40}
+                          alt="icon5"
+                          className="p-2"
+                        />
+                      ) : (
+                        <img
+                          src={icon}
+                          alt="icon5"
+                          width={40}
+                          height={40}
+                          className="p-2"
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
