@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 -mb-48 h-fit" id="contact">
+    <footer className="w-full pt-20 -mb-60 h-fit" id="contact">
       {/* background grid */}
       <div className="w-full absolute left-0 !-bottom-72 min-h-96">
         <img
