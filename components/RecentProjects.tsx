@@ -8,13 +8,13 @@ import Image from "next/image";
 
 const RecentProjects = () => {
   return (
-    <section className="py-24" id="projects">
+    <section className="pt-24 pb-12" id="projects">
       <h1 className="heading z-10">
         <span className="gradient-text drop-shadow-lg ">
           A Small Selection of Recent Projects
         </span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 ">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 -mt-8">
         {projects.map((item, index) => (
           <div
             className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem]  flex items-center justify-center sm:w-[570px] w-[80vw]"
