@@ -76,6 +76,8 @@ const Card = ({
       {/* Icons */}
       <Icon className="absolute h-10 w-10 -top-3 -left-3 dark:text-white text-black opacity-30 group-hover/canvas-card:scale-110 group-hover/canvas-card:rotate-45 transition duration-500 ease-in-out" />
       <Icon className="absolute h-10 w-10 -bottom-3 -left-3 dark:text-white text-black opacity-30 group-hover/canvas-card:scale-110 group-hover/canvas-card:rotate-45 transition duration-500 ease-in-out" />
+      <Icon className="absolute h-10 w-10 -top-3 -right-3 dark:text-white text-black opacity-30 group-hover/canvas-card:scale-110 group-hover/canvas-card:rotate-45 transition duration-500 ease-in-out" />
+      <Icon className="absolute h-10 w-10 -bottom-3 -right-3 dark:text-white text-black opacity-30 group-hover/canvas-card:scale-110 group-hover/canvas-card:rotate-45 transition duration-500 ease-in-out" />
 
       {/* Content */}
       <div className="relative z-20 px-10">
