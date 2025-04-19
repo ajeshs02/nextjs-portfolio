@@ -17,18 +17,10 @@ export default function Home() {
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
-        <Suspense fallback={<LazyLoader />}>
-          <RecentProjects />
-        </Suspense>
-        <Suspense fallback={<LazyLoader />}>
-          <Experience />
-        </Suspense>
-        <Suspense fallback={<LazyLoader />}>
-          <Approach />
-        </Suspense>
-        <Suspense fallback={<LazyLoader />}>
-          <Footer />
-        </Suspense>
+        <RecentProjects />
+        <Experience />
+        <Approach />
+        <Footer />
       </div>
     </Wrapper>
   );
