@@ -21,11 +21,17 @@ const Experience = () => {
             style={{
               backgroundColor:
                 "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-
               borderRadius: `calc(1.75rem* 0.96)`,
             }}
-            className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+            className="relative flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
           >
+            {/* Absolute Badge */}
+            {card.isCurrent && (
+              <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full gradient-text border border-purple  backdrop-blur-md">
+                Current
+              </span>
+            )}
+
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <Image
                 src={card.thumbnail}

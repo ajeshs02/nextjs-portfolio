@@ -31,8 +31,9 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, I&apos;m Ajesh S, a Next.Js / MERN Stack Developer based in
-            India
+            Hi, I&apos;m Ajesh S - a Next.js / MERN developer from India,
+            building scalable applications and exploring Go for backend
+            performance.
           </p>
 
           <a href="#about">

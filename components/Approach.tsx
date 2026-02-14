@@ -41,6 +41,7 @@ const Approach = () => {
 
 export default Approach;
 
+// Main Card
 const Card = ({
   title,
   icon,
@@ -107,6 +108,7 @@ const Card = ({
   );
 };
 
+// Middle Icon
 const AceternityIcon = ({
   order,
   classes = "text-purple",
@@ -132,6 +134,7 @@ const AceternityIcon = ({
   );
 };
 
+// Corner Icon
 export const Icon = ({ className, ...rest }: any) => {
   return (
     <svg

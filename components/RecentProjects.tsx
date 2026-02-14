@@ -15,81 +15,87 @@ const RecentProjects = () => {
         </span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 -mt-8">
-        {projects.map((item, index) => (
-          <div
-            className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem]  flex items-center justify-center sm:w-[570px] w-[80vw]"
-            key={item.id}
-          >
-            <PinContainer title={item.link} href={item.link}>
-              <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10 rounded-xl">
-                <Image
-                  src={item.img}
-                  alt="cover"
-                  width={400}
-                  height={350}
-                  className="z-10 absolute bottom-0 object-cover"
-                />
-              </div>
+        {projects.map((item, index) => {
+          const isLinkGithub = item.link.includes("github");
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {item.title}
-              </h1>
-
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
-                {item.des}
-              </p>
-
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      {icon ? (
-                        <Image
-                          src={icon}
-                          width={40}
-                          height={40}
-                          alt="icon5"
-                          className="p-2"
-                        />
-                      ) : (
-                        <img
-                          src={icon}
-                          alt="icon5"
-                          width={40}
-                          height={40}
-                          className="p-2"
-                        />
-                      )}
-                    </div>
-                  ))}
+          return (
+            <div
+              className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem]  flex items-center justify-center sm:w-[570px] w-[80vw]"
+              key={item.id}
+            >
+              <PinContainer title={item.link} href={item.link}>
+                <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10 rounded-xl">
+                  <Image
+                    src={item.img}
+                    alt="cover"
+                    width={400}
+                    height={350}
+                    className="z-10 absolute bottom-0 object-cover"
+                  />
                 </div>
 
-                <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    {index === 0 ? "Check Live Site" : "Github"}
-                  </p>
-                  {index === 0 ? (
-                    <FaLocationArrow className="ms-3" color="#CBACF9" />
-                  ) : (
-                    <FaGithub className="ms-3" color="#CBACF9" />
-                  )}
+                <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+                  {item.title}
+                </h1>
+
+                <p
+                  className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                  style={{
+                    color: "#BEC1DD",
+                    margin: "1vh 0",
+                  }}
+                >
+                  {item.des}
+                </p>
+
+                <div className="flex items-center justify-between mt-7 mb-3">
+                  <div className="flex items-center">
+                    {item.iconLists.map((icon, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                          style={{
+                            transform: `translateX(-${5 * index + 2}px)`,
+                          }}
+                        >
+                          {icon ? (
+                            <Image
+                              src={icon}
+                              width={40}
+                              height={40}
+                              alt="icon5"
+                              className="p-2"
+                            />
+                          ) : (
+                            <img
+                              src={icon}
+                              alt="icon5"
+                              width={40}
+                              height={40}
+                              className="p-2"
+                            />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="flex justify-center items-center">
+                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                      {isLinkGithub ? "Github" : "Check Live Site"}
+                    </p>
+                    {isLinkGithub ? (
+                      <FaGithub className="ms-3" color="#CBACF9" />
+                    ) : (
+                      <FaLocationArrow className="ms-3" color="#CBACF9" />
+                    )}
+                  </div>
                 </div>
-              </div>
-            </PinContainer>
-          </div>
-        ))}
+              </PinContainer>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

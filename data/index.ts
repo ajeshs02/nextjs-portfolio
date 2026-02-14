@@ -38,7 +38,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
+    title: "Engineering with a performance-first and scalability mindset",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -49,7 +49,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently Exploring Next.js-15 Possibilities",
+    title: "Currently exploring Go and high-concurrency backend architectures",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -77,10 +77,25 @@ export const projects = [
 
     img: "/assets/ride-rent.webp",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "dock.svg", "/fm.svg"],
-    link: "https://ride.rent/",
+    link: "https://ride.rent/ae/dubai/cars",
   },
   {
     id: 2,
+    title: "Team Sync - Jira inspired project management tool",
+    des: "A modern project management tool inspired by Jira, built with React/NodeJs/Express/Mongodb/GCP with Google Auth. Features include task management, team collaboration, and project tracking. ",
+
+    img: "/assets/teamsync.webp",
+    iconLists: [
+      "/re.svg",
+      "/node-js.svg",
+      "/express.svg",
+      "/mongodb.svg",
+      "/dock.svg",
+    ],
+    link: "https://team-sync-lyart.vercel.app/",
+  },
+  {
+    id: 3,
     title: "Gravity - An E-Commerce platform.",
     des: "Built on MERN stack, this is a modern e-commerce platform, with payment integration and file uploads ",
     img: "/assets/gravity.webp",
@@ -94,49 +109,45 @@ export const projects = [
     link: "https://github.com/ajeshs02/Gravity",
   },
   {
-    id: 3,
+    id: 4,
     title: "Evently - An Event Management platform",
     des: "A modern event management platform with stripe payment integration and clerk authentication",
     img: "/assets/evently.webp",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", , "/c.svg", "/mongodb.svg"],
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/c.svg", "/mongodb.svg"],
     link: "https://github.com/ajeshs02/event_platform",
-  },
-  {
-    id: 4,
-    title: "Car Showcase Platform",
-    des: "A car showcasing platform built on Next.js 14 for maximizing performance and SEO",
-    img: "/assets/car-rent.webp",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://github.com/ajeshs02/car_showcase",
   },
 ];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Developer (Contract)",
-    desc: "Developed high-performance, responsive web applications focused on maintainable and scalable code, ensuring enhanced SEO and user engagement.",
-    className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
-  },
-  {
-    id: 2,
-    title: "Frontend Deployment & Optimization",
-    desc: "Configured Dockerized environments for efficient deployment and scalability, collaborating with backend teams to optimize API integration and performance.",
+    title: "Software Engineer – TechPearl",
+    desc: "Developing scalable, production-grade applications with a focus on system reliability, clean architecture, and performance optimization. Collaborating across teams to design maintainable APIs, improve deployment workflows, and deliver robust end-to-end solutions.",
+    isCurrent: true,
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
+    id: 2,
+    title: "Full Stack Developer / Lead Frontend Developer",
+    desc: "Led frontend architecture and contributed across the MERN stack for Ride Rent, a high-performance and SEO-critical platform built with Next.js. Designed scalable components, optimized Core Web Vitals, implemented SSR/ISR strategies, and ensured seamless API integration for improved performance and discoverability.",
+    isCurrent: false,
+    className: "md:col-span-2",
+    thumbnail: "/exp1.svg",
+  },
+  {
     id: 3,
     title: "Collaborative Development",
-    desc: "Worked alongside cross-functional teams to implement client requirements, optimizing frontend architecture for usability and cross-device compatibility.",
+    desc: "Partnered with cross-functional teams including backend engineers, designers, and product stakeholders to translate business requirements into performant UI solutions. Improved frontend architecture for modularity, reusability, and cross-device compatibility while maintaining high code quality standards.",
+    isCurrent: false,
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
     title: "Mentor, Web Development Projects",
-    desc: "Guided college students on web development projects, focusing on code quality, project requirements, and successful project completion.",
+    desc: "Mentored college students on end-to-end web development projects, guiding them through requirement analysis, architecture design, code reviews, and deployment best practices. Emphasized clean coding principles, scalability considerations, and industry-standard workflows.",
+    isCurrent: false,
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
