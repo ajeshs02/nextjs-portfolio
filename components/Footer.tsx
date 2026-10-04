@@ -1,56 +1,66 @@
 import { FaLocationArrow } from "react-icons/fa6";
+import { LuDownload } from "react-icons/lu";
+import ContactCards from "./ContactCards";
 
-import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
-import Link from "next/link";
+
+const EMAIL = "ajeshs.dev@gmail.com";
+// Google Docs export link: the browser downloads it as a PDF directly
+const RESUME = "https://docs.google.com/document/d/1ZTLAlbSuty0thzC4Ryp-Tx6Sy5TmqWXdQyEU9OtaBMQ/export?format=pdf";
 
 const Footer = () => {
   return (
     <footer className="w-full pt-20 -mb-60 h-fit" id="contact">
       {/* background grid */}
       <div className="w-full absolute left-0 !-bottom-72 min-h-96">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/footer-grid.svg"
-          alt="grid"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full opacity-50 "
         />
       </div>
 
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-green">your</span> digital
-          presence to the next level?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+        <h2 className="heading lg:max-w-[45vw]" data-rv>
+          Let&apos;s build something <span className="gradient-text">meaningful.</span>
+        </h2>
+        <p className="text-white-200 md:mt-10 my-5 text-center" data-rv>
+          Interested in working together or discussing an opportunity?
+          I&apos;d be glad to connect.
         </p>
-        <a href="mailto:ajeshs.dev@gmail.com">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-            otherClasses="bg-yellow font-semibold !text-slate-900"
-          />
-        </a>
+        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 w-full md:w-auto" data-rv>
+          <div className="inline-block w-full md:w-auto">
+            <MagicButton
+              href={`mailto:${EMAIL}`}
+              title="Let's get in touch"
+              icon={<FaLocationArrow />}
+              position="right"
+              otherClasses="gradient font-semibold !text-slate-900"
+            />
+          </div>
+          <div className="inline-block w-full md:w-auto">
+            <MagicButton
+              href={RESUME}
+              external
+              title="Download CV"
+              icon={<LuDownload />}
+              position="right"
+              otherClasses="font-semibold"
+            />
+          </div>
+        </div>
       </div>
-      <div className="flex mt-16 md:flex-row flex-col max-md:gap-4 max-md:flex-col-reverse justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light max">
+
+      <ContactCards />
+
+      <div className="relative z-10 mt-16 flex justify-center">
+        <p className="md:text-base text-sm md:font-normal font-light">
           Copyright © {new Date().getFullYear()} Ajesh S
         </p>
-
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <Link
-              href={info.link}
-              target="_blank"
-              key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
-              <img src={info.img} alt="icons" width={20} height={20} />
-            </Link>
-          ))}
-        </div>
       </div>
     </footer>
   );

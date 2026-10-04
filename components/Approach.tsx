@@ -1,13 +1,11 @@
-"use client";
-
 import React from "react";
 
 const Approach = () => {
   return (
-    <section className="w-full py-20">
-      <h1 className="heading">
+    <section className="w-full py-20" id="approach" aria-labelledby="approach-heading">
+      <h2 id="approach-heading" className="heading" data-rv>
         <span className="gradient-text drop-shadow-lg">My Approach</span>
-      </h1>
+      </h2>
 
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         <Card
@@ -20,7 +18,7 @@ const Approach = () => {
         ></Card>
         <Card
           title="Development & Progress Update"
-          icon={<AceternityIcon order="Phase 2" classes="text-green" />}
+          icon={<AceternityIcon order="Phase 2" classes="text-white" />}
           des="Once we agree on the plan, I cue my lofi playlist and dive into
           coding. From initial sketches to polished code, I keep you updated
           every step of the way."
@@ -53,26 +51,19 @@ const Card = ({
   des: string;
   index: number;
 }) => {
-  const [hovered, setHovered] = React.useState(false);
-
-  const bgColor =
-    index === 1 ? "bg-purple/80" : index === 2 ? "bg-green/80" : "bg-yellow/80";
+  const hoverBg =
+    index === 1
+      ? "hover:bg-purple/[0.14]"
+      : index === 2
+        ? "hover:bg-white/[0.08]"
+        : "hover:bg-yellow/[0.14]";
 
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`border border-black/[0.2] group/canvas-card flex items-center justify-center
-       dark:border-white/[0.2] max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl transition-all duration-500 ease-in-out ${
-         hovered ? bgColor : ""
-       }`}
-      style={{
-        backgroundImage: hovered
-          ? "linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 50%)"
-          : "none",
-        willChange: "opacity, transform",
-        backdropFilter: "blur(16px) saturate(180%)",
-      }}
+      data-rv
+      className={`pf-glow border border-black/[0.2] group/canvas-card flex items-center justify-center
+       dark:border-white/[0.2] max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl transition-[background-color,border-color] duration-700 ease-out
+       hover:[background-image:linear-gradient(to_top,rgba(0,0,0,0.55),rgba(0,0,0,0)_50%)] ${hoverBg}`}
     >
       {/* Icons */}
       <Icon className="absolute h-10 w-10 -top-3 -left-3 dark:text-white text-black opacity-30 group-hover/canvas-card:scale-110 group-hover/canvas-card:rotate-45 transition duration-500 ease-in-out" />
@@ -84,22 +75,23 @@ const Card = ({
       <div className="relative z-20 px-10">
         <div
           className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]
-        group-hover/canvas-card:opacity-0 transition duration-500 ease-in-out"
+        group-hover/canvas-card:opacity-0 transition duration-500 ease-in-out
+        [@media(hover:none)]:static [@media(hover:none)]:translate-x-0 [@media(hover:none)]:translate-y-0 [@media(hover:none)]:flex [@media(hover:none)]:justify-center"
         >
           {icon}
         </div>
-        <h2
-          className="dark:text-white text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100
+        <h3
+          className="dark:text-white text-center text-3xl opacity-0 [@media(hover:none)]:opacity-100 group-hover/canvas-card:opacity-100
          relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white
          group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:scale-105 transition duration-500 ease-in-out"
         >
           {title}
-        </h2>
+        </h3>
         <p
-          className="text-sm opacity-0 group-hover/canvas-card:opacity-100
+          className="text-sm opacity-0 [@media(hover:none)]:opacity-100 group-hover/canvas-card:opacity-100
          relative z-10 mt-4 group-hover/canvas-card:text-white text-center
          group-hover/canvas-card:-translate-y-2 transition duration-500 ease-in-out"
-          style={{ color: "#E4ECFF" }}
+          style={{ color: "#f3f2f2" }}
         >
           {des}
         </p>
@@ -118,18 +110,19 @@ const AceternityIcon = ({
 }) => {
   return (
     <div>
-      <button className="relative inline-flex overflow-hidden rounded-full p-[1px] ">
+      <span className="relative inline-flex overflow-hidden rounded-full p-[1px] ">
         <span
+          aria-hidden="true"
           className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]
-         bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
+         bg-[conic-gradient(from_90deg_at_50%_50%,#f0a548_0%,#78a9ee_50%,#f0a548_100%)]"
         />
         <span
           className={`first-letter:inline-flex h-full w-full cursor-pointer items-center
-        justify-center rounded-full bg-slate-950 px-5 py-2 ${classes} backdrop-blur-3xl font-bold text-2xl`}
+        justify-center rounded-full bg-[#1a1918] px-5 py-2 ${classes} backdrop-blur-3xl font-bold text-2xl`}
         >
           {order}
         </span>
-      </button>
+      </span>
     </div>
   );
 };

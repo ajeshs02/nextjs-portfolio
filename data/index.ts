@@ -2,7 +2,7 @@ export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
   { name: "Experience", link: "#experience" },
-  { name: "Contact", link: "#contact" },
+  { name: "Contact", link: "#contact", cta: true },
 ];
 
 export const gridItems = [
@@ -23,7 +23,7 @@ export const gridItems = [
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
-    img: "/grid.svg",
+    img: "/grid.webp",
     spareImg: "/b4.svg",
   },
   {
@@ -43,7 +43,7 @@ export const gridItems = [
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "justify-start",
-    img: "/grid.svg",
+    img: "/grid.webp",
     spareImg: "/b4.svg",
   },
 
@@ -54,8 +54,8 @@ export const gridItems = [
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
+    img: "/b5.webp",
+    spareImg: "/grid.webp",
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ export const projects = [
     des: "Comprehensive vehicle rental platform with Next.js, focused on SEO optimization and high performance. ",
 
     img: "/assets/ride-rent.webp",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "dock.svg", "/fm.svg"],
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/dock.svg", "/fm.svg"],
     link: "https://ride.rent/ae/dubai/cars",
   },
   {
@@ -100,7 +100,7 @@ export const projects = [
     des: "Built on MERN stack, this is a modern e-commerce platform, with payment integration and file uploads ",
     img: "/assets/gravity.webp",
     iconLists: [
-      "javascript.svg",
+      "/javascript.svg",
       "/re.svg",
       "/tail.svg",
       "/node-js.svg",

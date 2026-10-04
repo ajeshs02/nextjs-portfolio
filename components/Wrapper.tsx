@@ -1,37 +1,18 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { useBlobFollow } from "@/lib/useBlobFollow";
+import ScrollReveal from "./ScrollReveal";
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
   const blobRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const moveBlob = (event: MouseEvent) => {
-      const { clientX, clientY } = event;
-
-      if (blobRef.current) {
-        blobRef.current.animate(
-          {
-            left: `${clientX}px`,
-            top: `${clientY}px`,
-          },
-          { duration: 2000, fill: "forwards" }
-        );
-      }
-    };
-
-    document.body.addEventListener("mousemove", moveBlob);
-
-    return () => {
-      document.body.removeEventListener("mousemove", moveBlob);
-    };
-  }, []);
+  useBlobFollow(blobRef);
 
   return (
-    <main className="flex  h-auto relative flex-col justify-center items-center  px-5 bg-black-100 ms-auto sm:px-10 ">
-      <div id="blob" ref={blobRef} />
-      <div id="blur" />
+    <div className="pf-root flex h-auto relative flex-col justify-center items-center px-5 bg-black-100 ms-auto sm:px-10">
+      <div id="blob" ref={blobRef} aria-hidden="true" />
+      <ScrollReveal />
       {children}
-    </main>
+    </div>
   );
 };
 

@@ -3,14 +3,14 @@ import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
-  gradientBackgroundStart = "#a374ff", // updated start color
-  gradientBackgroundEnd = "#ffd074", // updated end color
-  firstColor = "163, 116, 255", // converted #a374ff to RGB
-  secondColor = "255, 208, 116", // converted #ffd074 to RGB
-  thirdColor = "255, 180, 140", // custom color in theme range
-  fourthColor = "220, 120, 200", // custom color in theme range
-  fifthColor = "240, 180, 150", // custom color in theme range
-  pointerColor = "200, 160, 255",
+  gradientBackgroundStart = "#201e1d", // start color
+  gradientBackgroundEnd = "#2d2b2b", // end color
+  firstColor = "120, 169, 238", // blue
+  secondColor = "240, 165, 72", // amber
+  thirdColor = "243, 242, 242", // custom color in theme range
+  fourthColor = "120, 169, 238", // blue
+  fifthColor = "240, 165, 72", // custom color in theme range
+  pointerColor = "243, 242, 242",
   size = "80%",
   blendingValue = "hard-light",
   children,
@@ -35,10 +35,8 @@ export const BackgroundGradientAnimation = ({
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
 
-  const [curX, setCurX] = useState(0);
-  const [curY, setCurY] = useState(0);
-  const [tgX, setTgX] = useState(0);
-  const [tgY, setTgY] = useState(0);
+  const cur = useRef({ x: 0, y: 0 });
+  const tg = useRef({ x: 0, y: 0 });
   useEffect(() => {
     document.body.style.setProperty(
       "--gradient-background-start",
@@ -56,29 +54,44 @@ export const BackgroundGradientAnimation = ({
     document.body.style.setProperty("--pointer-color", pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
+  }, [
+    gradientBackgroundStart, gradientBackgroundEnd, firstColor, secondColor, thirdColor,
+    fourthColor, fifthColor, pointerColor, size, blendingValue,
+  ]);
+
+  // Ease the pointer blob toward the cursor. The rAF loop only runs while it is still travelling.
+  const raf = useRef(0);
+  const tick = () => {
+    const el = interactiveRef.current;
+    if (!el) return;
+    cur.current.x += (tg.current.x - cur.current.x) * 0.06;
+    cur.current.y += (tg.current.y - cur.current.y) * 0.06;
+    el.style.transform = `translate3d(${cur.current.x.toFixed(1)}px, ${cur.current.y.toFixed(1)}px, 0)`;
+    const settled =
+      Math.abs(tg.current.x - cur.current.x) < 0.2 && Math.abs(tg.current.y - cur.current.y) < 0.2;
+    raf.current = settled ? 0 : requestAnimationFrame(tick);
+  };
+  useEffect(() => () => cancelAnimationFrame(raf.current), []);
+
+  // Pause the five infinite blob animations while the card is off screen.
+  const rootRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const io = new IntersectionObserver(([entry]) => {
+      root.dataset.paused = String(!entry.isIntersecting);
+    });
+    io.observe(root);
+    return () => io.disconnect();
   }, []);
 
-  useEffect(() => {
-    function move() {
-      if (!interactiveRef.current) {
-        return;
-      }
-      setCurX(curX + (tgX - curX) / 20);
-      setCurY(curY + (tgY - curY) / 20);
-      interactiveRef.current.style.transform = `translate(${Math.round(
-        curX
-      )}px, ${Math.round(curY)}px)`;
-    }
-
-    move();
-  }, [tgX, tgY]);
-
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (interactiveRef.current) {
-      const rect = interactiveRef.current.getBoundingClientRect();
-      setTgX(event.clientX - rect.left);
-      setTgY(event.clientY - rect.top);
-    }
+    const parent = interactiveRef.current?.parentElement;
+    if (!parent) return;
+    const rect = parent.getBoundingClientRect();
+    tg.current.x = event.clientX - rect.left;
+    tg.current.y = event.clientY - rect.top;
+    if (!raf.current) raf.current = requestAnimationFrame(tick);
   };
 
   const [isSafari, setIsSafari] = useState(false);
@@ -88,6 +101,8 @@ export const BackgroundGradientAnimation = ({
 
   return (
     <div
+      ref={rootRef}
+      aria-hidden="true"
       className={cn(
         "w-full h-full absolute overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
         containerClassName

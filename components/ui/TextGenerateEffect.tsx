@@ -1,56 +1,28 @@
-"use client";
-import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+// Word-by-word headline entrance. Pure CSS (see .pf-word), so the text is painted and animated
+// from the first frame without waiting for JavaScript. Renders the page's <h1>.
 export const TextGenerateEffect = ({
   words,
   className,
+  gradientFrom = 4,
 }: {
   words: string;
   className?: string;
+  /** Words from this index on use the gradient colour. */
+  gradientFrom?: number;
 }) => {
-  const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
-  useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    );
-  }, [scope.current]);
-
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className={`${
-                idx > 3 ? "gradient-text drop-shadow-lg" : "text-white "
-              } opacity-0`}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
-
   return (
-    <div className={cn("font-bold", className)}>
-      <div className="my-4">
-        <div className=" dark:text-white text-black  leading-snug tracking-wide">
-          {renderWords()}
-        </div>
-      </div>
-    </div>
+    <h1 className={cn("font-bold my-4 leading-snug tracking-wide text-white", className)}>
+      {words.split(" ").map((word, idx) => (
+        <span
+          key={word + idx}
+          className={cn("pf-word", idx >= gradientFrom && "gradient-text drop-shadow-lg")}
+          style={{ "--i": idx } as React.CSSProperties}
+        >
+          {word}{" "}
+        </span>
+      ))}
+    </h1>
   );
 };

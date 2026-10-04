@@ -68,7 +68,7 @@
 
 @layer base {
   * {
-    @apply border-border !scroll-smooth;
+    @apply border-border;
   }
   body {
     @apply bg-bg text-foreground;
@@ -84,7 +84,7 @@
   }
 
   .black-gradient {
-    background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
+    background: linear-gradient(90deg, #2d2b2b 0%, #201e1d 100%);
   }
 }
 
@@ -98,7 +98,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  background-color: #11071f !important;
+  background-color: #2d2b2b !important;
   color: white !important;
 }
 
@@ -110,16 +110,26 @@ select:-webkit-autofill:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #1d1d1f;
+  background-color: #201e1d;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #a374ff;
+  background-color: oklch(0.72 0.08 70);
+  border: 2px solid #201e1d;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a374ff;
+  background-color: oklch(0.8 0.09 76);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.72 0.08 70) #201e1d;
+}
+
+::selection {
+  background: color-mix(in srgb, #78a9ee 40%, transparent);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -134,42 +144,138 @@ select:-webkit-autofill:focus {
 }
 
 .gradient {
-  background: linear-gradient(45deg, #a374ff, #ffd074);
+  background: linear-gradient(135deg, #78a9ee, #f3f2f2 50%, #f0a548);
 }
 .gradient-text {
-  background: linear-gradient(45deg, #a374ff, #ffd074);
+  background: linear-gradient(135deg, #78a9ee, #f3f2f2 50%, #f0a548);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .gradient-short-text {
-  background: linear-gradient(10deg, #a374ff, #ffd074);
+  background: linear-gradient(135deg, #78a9ee, #f3f2f2 50%, #f0a548);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 #blob {
-  background-color: white;
-  height: 300px;
+  height: 560px;
   aspect-ratio: 1;
   position: fixed;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
   border-radius: 50%;
-  opacity: 0.7;
-  background: linear-gradient(to right, #ffd074, #a374ff);
-  animation: rotate 20s infinite;
+  opacity: 0.4;
+  background: linear-gradient(to right, #f0a548, #78a9ee);
+  filter: blur(90px);
+  pointer-events: none;
+  /* positioned with the individual translate property (set by useBlobFollow), never left/top */
+  left: 0;
+  top: 0;
+  translate: calc(50vw - 50%) calc(40vh - 50%);
+  will-change: translate, transform;
+  animation: blobSpin 18s linear infinite;
   z-index: 0 !important;
 }
 
-#blur {
-  height: 100% !important;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0 !important;
-  backdrop-filter: blur(100px) !important;
+@keyframes blobSpin {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.15, 0.9); }
+  to { transform: rotate(360deg) scale(1); }
 }
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* /portfolio: one-time scroll reveal (see components/ScrollReveal.tsx) */
+.pf-root [data-rv] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 1s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms);
+}
+/* blur only on headings: cheap there, costly on large image cards */
+.pf-root :is(h1, h2)[data-rv] {
+  filter: blur(6px);
+  transition:
+    opacity 1s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms),
+    filter 1s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms);
+}
+.pf-root [data-rv][data-in] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Cursor-follow glow on cards */
+.pf-glow { position: relative; isolation: isolate; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease, box-shadow 0.5s ease; }
+.pf-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(240, 165, 72, 0.14), rgba(120, 169, 238, 0.07) 40%, transparent 65%);
+}
+@media (hover: hover) {
+  .pf-glow:hover { border-color: rgba(240, 165, 72, 0.35); box-shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.7); }
+  .pf-glow:hover::after { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-root [data-rv] { transition: none; }
+}
+
+/* /portfolio hero entrance: pure CSS so first paint never waits for JS to hydrate */
+@keyframes pfWordIn {
+  from { opacity: 0; filter: blur(8px); transform: translateY(12px); }
+  to { opacity: 1; filter: blur(0); transform: none; }
+}
+@keyframes pfRise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.pf-word {
+  display: inline-block;
+  margin-right: 0.26em;
+  animation: pfWordIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) calc(0.03s + var(--i, 0) * 0.045s) backwards;
+}
+.pf-rise { animation: pfRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms) backwards; }
+@media (prefers-reduced-motion: reduce) {
+  .pf-word, .pf-rise { animation: none; }
+}
+
+/* Project card tooltip pulses: only run while the card is hovered */
+@keyframes pinPulse {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+  33% { opacity: 1; }
+  66% { opacity: 0.5; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+}
+.pin-pulse {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  animation: pinPulse 6s ease-in-out var(--pd, 0s) infinite;
+  animation-play-state: paused;
+}
+.pin-root:hover .pin-pulse, .pin-root:focus-visible .pin-pulse { animation-play-state: running; }
+
+/* Decorative infinite animations stop while their section is off screen */
+[data-paused="true"] [style*="animation"], [data-paused="true"] [class*="animate-"] { animation-play-state: paused !important; }
+
+/* Floating nav: slides in on load, hides on scroll down (transform + opacity only) */
+@keyframes pfNavIn { from { transform: translateY(-100px); } to { transform: none; } }
+.pf-nav {
+  animation: pfNavIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-nav[data-hidden="true"] { transform: translateY(-100px); opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .pf-nav { animation: none; transition: none; } }
+
+/* In-page nav targets (read by scrollToTarget as the scroll offset) */
+.pf-root section[id] { scroll-margin-top: 20px; }
+.pf-root footer[id] { scroll-margin-top: 0; }

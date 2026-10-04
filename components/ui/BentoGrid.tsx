@@ -52,33 +52,43 @@ export const BentoGridItem = ({
 
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    const text = "ajeshs.dev@gmail.com";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText("ajeshs.dev@gmail.com");
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // clipboard blocked: nothing to do, the address is also in the footer
+    }
   };
 
   return (
     <div
+      data-rv
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input shadow-none justify-between flex flex-col space-y-4  bg-slate-950/30",
+        "pf-glow row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento justify-between flex flex-col space-y-4 bg-black-200/60",
         className
       )}
-      style={{
-        backgroundColor: "linear-gradient(96deg, #a374ff 0%, #ffd074 99%)",
-      }}
     >
       {/* add img divs */}
       <div
-        className={`${id === 6 && "text-slate-900 flex justify-center"} h-full`}
+        className={`${id === 6 && "text-white flex justify-center"} h-full`}
       >
         <div className="w-full h-full absolute">
           {img && (
             <Image
               src={img}
-              alt={img}
+              alt=""
+              aria-hidden="true"
               width={id === 1 ? 900 : 200}
               height={id === 1 ? 700 : 200}
+              sizes={
+                id === 1
+                  ? "(min-width: 1024px) 60vw, 100vw"
+                  : id === 5
+                    ? "(min-width: 768px) 384px, 240px"
+                    : "200px"
+              }
               className={cn(imgClassName, "object-cover object-center ")}
             />
           )}
@@ -92,9 +102,11 @@ export const BentoGridItem = ({
           {spareImg && (
             <Image
               src={spareImg}
-              alt={spareImg}
+              alt=""
+              aria-hidden="true"
               width={220}
               height={220}
+              sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover object-center w-full h-full"
             />
           )}
@@ -108,18 +120,16 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+            "group-hover/bento:translate-x-2 transition-transform duration-500 ease-out relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
           )}
         >
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-white-200 z-10">
             {description}
           </div>
 
-          <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
-          >
+          <h3 className="font-sans text-lg lg:text-3xl max-w-96 font-bold z-10">
             {title}
-          </div>
+          </h3>
 
           {/* Tech stack list div */}
           {id === 3 && (
@@ -130,7 +140,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50
-                    lg:opacity-100 rounded-lg text-center bg-purple/20"
+                    lg:opacity-100 rounded-lg text-center bg-white/[0.06]"
                   >
                     {item}
                   </span>
@@ -141,7 +151,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50
-                    lg:opacity-100 rounded-lg text-center bg-purple/20"
+                    lg:opacity-100 rounded-lg text-center bg-white/[0.06]"
                   >
                     {item}
                   </span>
@@ -162,7 +172,7 @@ export const BentoGridItem = ({
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
+                otherClasses="!bg-[#1a1918]"
               />
             </div>
           )}
