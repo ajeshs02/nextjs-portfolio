@@ -13,8 +13,6 @@ export const FloatingNav = ({
     name: string;
     link: string;
     icon?: JSX.Element;
-    /** Render as a highlighted button */
-    cta?: boolean;
   }[];
   className?: string;
 }) => {
@@ -57,9 +55,7 @@ export const FloatingNav = ({
           href={navItem.link}
           className={cn(
             "relative items-center flex space-x-1 transition-colors duration-300",
-            navItem.cta
-              ? "gradient rounded-full px-4 py-1.5 font-semibold !text-slate-900 hover:brightness-110 transition-[filter]"
-              : "dark:text-neutral-50 text-neutral-600 dark:hover:text-yellow hover:text-neutral-500"
+            "dark:text-neutral-50 text-neutral-600 dark:hover:text-yellow hover:text-neutral-500"
           )}
         >
           <span className="block sm:hidden">{navItem.icon}</span>
